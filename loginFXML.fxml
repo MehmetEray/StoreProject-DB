@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.LoginFXMLController">
+   <children>
+      <AnchorPane layoutX="283.0" layoutY="-72.0" prefHeight="482.0" prefWidth="302.0" style="-fx-background-color: #9C2827;">
+         <children>
+            <TextField fx:id="usernametxtfield" layoutX="56.0" layoutY="152.0" prefHeight="25.0" prefWidth="190.0" promptText="username" />
+            <PasswordField fx:id="passwordtxtfield" layoutX="56.0" layoutY="209.0" prefHeight="25.0" prefWidth="190.0" promptText="password" />
+            <Button fx:id="signInBtn" layoutX="102.0" layoutY="271.0" mnemonicParsing="false" onAction="#signIn" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #e45652;" text="SIGN IN" />
+            <Label layoutX="130.0" layoutY="108.0" text="SIGN IN" textFill="#3fd3ce" />
+            <Hyperlink fx:id="forgotPassword" layoutX="100.0" layoutY="331.0" onAction="#forgot" text="Forgot Password?" textFill="#ebdfdf" />
+            <Button fx:id="exitLoginBtn" layoutX="238.0" layoutY="447.0" mnemonicParsing="false" onAction="#exitLogin" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="343.0" fitWidth="244.0" layoutX="39.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="49.0" layoutY="156.0" prefHeight="64.0" prefWidth="244.0" text="SIGN UP PLEASE.." textFill="#ddd1d1">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="signUpBtn" layoutX="49.0" layoutY="208.0" mnemonicParsing="false" onAction="#signUp" prefHeight="25.0" prefWidth="201.0" style="-fx-background-color: #e45652;" text="SIGN UP" />
+   </children>
+</AnchorPane>

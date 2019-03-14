@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.HeadphonesFXMLController">
+   <children>
+      <VBox layoutY="97.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Button fx:id="phılıpsHeadBtn" mnemonicParsing="false" onAction="#phılıpsHeadShow" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="PHILIPS" />
+            <Button fx:id="appleHeadBtn" mnemonicParsing="false" onAction="#appleHeadShow" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="APPLE" />
+            <Button fx:id="huaweiHeadBtn" mnemonicParsing="false" onAction="#huaweiHeadShow" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="HUAWEİ" />
+         </children>
+      </VBox>
+      <TableView layoutX="115.0" layoutY="53.0" prefHeight="276.0" prefWidth="471.0">
+         <columns>
+            <TableColumn prefWidth="194.0" text="model" />
+            <TableColumn prefWidth="72.0" text="ram" />
+            <TableColumn prefWidth="108.0" text="processor" />
+            <TableColumn prefWidth="124.0" text="camera" />
+         </columns>
+      </TableView>
+      <Button fx:id="exitHead" layoutX="535.0" layoutY="361.0" mnemonicParsing="false" onAction="#exitHead" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
+   </children>
+</AnchorPane>
