@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication2.BookFuncFXMLController">
+   <children>
+      <Label layoutX="59.0" layoutY="89.0" text="Lütfen eklemek istediğiniz kitabın adını giriniz" textFill="#f2eeee" />
+      <Label layoutX="59.0" layoutY="117.0" text="Lütfen eklemek istediğiniz kitabın yazarını giriniz" textFill="#f2eeee" />
+      <Label layoutX="59.0" layoutY="149.0" text="Lütfen eklemek istediğiniz kitabın türünü giriniz" textFill="#f2eeee" />
+      <Label layoutX="59.0" layoutY="177.0" text="Lütfen eklemek istediğiniz kitabın fiyatını giriniz" textFill="#f2eeee" />
+      <TextField fx:id="bookNametf" layoutX="349.0" layoutY="85.0" promptText="book name" />
+      <TextField fx:id="authortf" layoutX="349.0" layoutY="113.0" promptText="author" />
+      <TextField fx:id="typetf" layoutX="349.0" layoutY="145.0" promptText="type" />
+      <TextField fx:id="pricetf" layoutX="349.0" layoutY="173.0" promptText="price" />
+      <Button fx:id="bookInsertBtn" layoutX="243.0" layoutY="216.0" mnemonicParsing="false" onAction="#bookInsert" prefHeight="25.0" prefWidth="135.0" text="Ekle" />
+   </children>
+</AnchorPane>

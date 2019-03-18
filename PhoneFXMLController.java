@@ -27,6 +27,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import static javafxapplication2.PhoneFXMLController.phoneData;
 
 /**
  * FXML Controller class
@@ -46,10 +47,11 @@ public class PhoneFXMLController implements Initializable {
     @FXML private TableColumn<phone, Integer> colPhoneRam;
     @FXML private TableColumn<phone, String> colPhoneProcessor;
     @FXML private TableColumn<phone, Integer> colPhoneCamera;
+    @FXML private TableColumn<phone, Integer> colPhonePrice;
     @FXML private TableView<phone> phoneTableView;
     
     
-    ObservableList<phone> phoneData = FXCollections.observableArrayList();
+    static ObservableList<phone> phoneData = FXCollections.observableArrayList();
     @FXML
     void phoneExit(ActionEvent event) {
          Platform.exit();
@@ -59,14 +61,15 @@ public class PhoneFXMLController implements Initializable {
     void phoneSamsungShow(ActionEvent event) throws SQLException, ClassNotFoundException {
         
         connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rsset = connection.createStatement().executeQuery("select * from phone_Table where model like 'samsung%'");
-        while(rsset.next()){
-            phoneData.add(new phone(rsset.getString("model"),rsset.getInt("ram"),rsset.getString("processor"),rsset.getInt("camera")));
+        ResultSet rs = connection.createStatement().executeQuery("Exec phones samsung");
+        while(rs.next()){
+            phoneData.add(new phone(rs.getString("model"),rs.getInt("ram"),rs.getString("processor"),rs.getInt("camera"),rs.getInt("price")));
         }
         colPhoneModel.setCellValueFactory(new PropertyValueFactory<>("model"));
         colPhoneRam.setCellValueFactory(new PropertyValueFactory<>("ram"));
         colPhoneProcessor.setCellValueFactory(new PropertyValueFactory<>("processor"));
         colPhoneCamera.setCellValueFactory(new PropertyValueFactory<>("camera"));
+        colPhonePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         phoneTableView.setItems(phoneData);
         
         System.out.println("Samsung telefonlar gösterildi");
@@ -75,31 +78,44 @@ public class PhoneFXMLController implements Initializable {
 
     @FXML
     void phoneAppleShow(ActionEvent event) throws SQLException {
-        
         connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rsset = connection.createStatement().executeQuery("select * from phone_Table where model like 'apple%'");
-        while(rsset.next()){
-            phoneData.add(new phone(rsset.getString("model"),rsset.getInt("ram"),rsset.getString("processor"),rsset.getInt("camera")));
+        ResultSet rs2 = connection.createStatement().executeQuery("Exec phones apple");
+        while(rs2.next()){
+            phoneData.add(new phone(rs2.getString("model"),rs2.getInt("ram"),rs2.getString("processor"),rs2.getInt("camera"),rs2.getInt("price")));
         }
         colPhoneModel.setCellValueFactory(new PropertyValueFactory<>("model"));
         colPhoneRam.setCellValueFactory(new PropertyValueFactory<>("ram"));
         colPhoneProcessor.setCellValueFactory(new PropertyValueFactory<>("processor"));
         colPhoneCamera.setCellValueFactory(new PropertyValueFactory<>("camera"));
+        colPhonePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         phoneTableView.setItems(phoneData);
         
         System.out.println("Apple telefonlar gösterildi");
     }
 
     @FXML
-    void phoneHuaweiShow(ActionEvent event) {
-
+    void phoneHuaweiShow(ActionEvent event) throws SQLException {
+        connection = DriverManager.getConnection(conStr,"sa","123456789");
+        ResultSet rs2 = connection.createStatement().executeQuery("Exec phones huawei");
+        while(rs2.next()){
+            phoneData.add(new phone(rs2.getString("model"),rs2.getInt("ram"),rs2.getString("processor"),rs2.getInt("camera"),rs2.getInt("price")));
+        }
+        colPhoneModel.setCellValueFactory(new PropertyValueFactory<>("model"));
+        colPhoneRam.setCellValueFactory(new PropertyValueFactory<>("ram"));
+        colPhoneProcessor.setCellValueFactory(new PropertyValueFactory<>("processor"));
+        colPhoneCamera.setCellValueFactory(new PropertyValueFactory<>("camera"));
+        colPhonePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        phoneTableView.setItems(phoneData);
+        
+        System.out.println("Huawei telefonlar gösterildi");
     }
     @FXML
     void logoutPhone(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        stage.setScene(new Scene(root,650,500));
+        stage.setScene(new Scene(root,800,850));
         stage.show();
+        logoutphone.getScene().getWindow().hide();
     }
      @FXML
     void phoneBack(ActionEvent event) throws IOException {
@@ -107,12 +123,28 @@ public class PhoneFXMLController implements Initializable {
 
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
-        stage.setScene(new Scene(root,650,500));
+        stage.setScene(new Scene(root,800,850));
         stage.show();
+        backBtn.getScene().getWindow().hide();
     }
+   
+    @FXML
+    void phoneTableviewSelect(ActionEvent event) { /*
+        phoneData phone = phoneTableView.getSelectionModel().getSelectedItems();
+        if(phone == null){
+            phoneTextFlow.setText("Nothing selected");
+        }
+        else{
+            String phoneModel = pho
+        }
+        */ 
+    }
+   
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    
     
 }

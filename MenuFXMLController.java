@@ -42,31 +42,36 @@ public class MenuFXMLController implements Initializable {
     void headShow(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("headphonesFXML.fxml"));
-        stage.setScene(new Scene(root,650,500));
+        stage.setScene(new Scene(root,800,850));
         stage.show();
+        headBtn.getScene().getWindow().hide();
     }
 
     @FXML
     void compShow(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("computerFXML.fxml"));
-        stage.setScene(new Scene(root,650,500));
+        stage.setScene(new Scene(root,800,850));
         stage.show();
+        compBtn.getScene().getWindow().hide();
     }
 
     @FXML
     void phonesShow(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("phoneFXML.fxml"));
-        stage.setScene(new Scene(root,650,500));
+        stage.setScene(new Scene(root,800,850));
         stage.show();
+        System.out.println("Telefonlara giriş yapıldı");
+        phonesBtn.getScene().getWindow().hide();
     }
       @FXML
     void booksShow(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("bookFXML.fxml"));
-        stage.setScene(new Scene(root,650,500));
+        stage.setScene(new Scene(root,800,850));
         stage.show();
+        booksBtn.getScene().getWindow().hide();
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

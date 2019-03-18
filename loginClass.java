@@ -38,42 +38,7 @@ public class loginClass{
         }
         return null;
     }
-    /*
-    public static ObservableList<phone> getAllRecords() {
-        String sql = "select * from phoneTable";
-        ResultSet rsSet;
-        try {
-            rsSet = database.dbExecute(sql);
-            ObservableList<phone> phoneList = getPhoneObjects(rsSet);
-            return phoneList;
-        } catch (SQLException ex) {
-            Logger.getLogger(loginClass.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Error is getting records");
-        }
-        return null;
-        
-        
-        
-        
-    }*/
-/*
-    private static ObservableList<phone> getPhoneObjects(ResultSet rsSet) { 
-        try {
-            ObservableList<phone> phoneList = FXCollections.observableArrayList();
-            while(rsSet.next()){
-                phone p = new phone();
-                p.setPhoneModel(rsSet.getInt("model"));
-                p.setPhoneRam(rsSet.getString("ram"));
-                p.setPhoneProcessor(rsSet.getString("processor"));
-                p.setPhoneCamera(rsSet.getInt("camera"));
-                phoneList.add(p);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(loginClass.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    */
+  
     
      
 }

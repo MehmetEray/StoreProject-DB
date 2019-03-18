@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="511.0" prefWidth="641.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.AdminPanelFXMLController">
+   <children>
+      <Label layoutX="68.0" layoutY="185.0" text="BOOKS" textFill="#fcf9f9" />
+      <Label layoutX="69.0" layoutY="235.0" text="PHONES" textFill="#fcf9f9" />
+      <Label layoutX="68.0" layoutY="282.0" text="COMPUTERS" textFill="#fcf9f9" />
+      <Label layoutX="64.0" layoutY="334.0" text="HEADPHONES" textFill="#fcf9f9" />
+      <Button fx:id="adminInsertBookBtn" layoutX="224.0" layoutY="181.0" mnemonicParsing="false" onAction="#adminInsertBook" text="insert book" />
+      <Button fx:id="adminDeleteBookBtn" layoutX="367.0" layoutY="181.0" mnemonicParsing="false" onAction="#adminDeleteBook" text="delete book" />
+      <Button fx:id="adminInsertPhoneBtn" layoutX="222.0" layoutY="231.0" mnemonicParsing="false" onAction="#adminInsertPhone" text="insert phone" />
+      <Button fx:id="adminDeletePhoneBtn" layoutX="364.0" layoutY="231.0" mnemonicParsing="false" onAction="#adminDeletePhone" text="delete phone" />
+      <Button fx:id="adminInsertCompBtn" layoutX="224.0" layoutY="278.0" mnemonicParsing="false" onAction="#adminInsertComp" text="insert computer" />
+      <Button fx:id="adminInsertHeadphoneBtn" layoutX="220.0" layoutY="330.0" mnemonicParsing="false" onAction="#adminInsertHeadphone" text="insert headphone" />
+      <Button fx:id="adminDeleteCompBtn" layoutX="356.0" layoutY="278.0" mnemonicParsing="false" onAction="#adminDeleteComp" text="delete computer" />
+      <Button fx:id="adminDeleteHeadphoneBtn" layoutX="352.0" layoutY="330.0" mnemonicParsing="false" onAction="#adminDeleteHeadphone" text="delete headphone" />
+      <Label layoutX="64.0" layoutY="41.0" text="Welcome Administrator" textFill="#fcf9f9">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="102.0" text="What would you want?" textFill="#fcf9f9">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

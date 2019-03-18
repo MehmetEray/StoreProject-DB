@@ -10,22 +10,12 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-/**
- *
- * @author mehmet eray
- */
 public class phone {
      String model;
      Integer ram;
      String processor;
      Integer camera;
-
-    public phone(String model, Integer ram, String processor, Integer camera) {
-        this.model = model;
-        this.ram = ram;
-        this.processor = processor;
-        this.camera = camera;
-    }
+     Integer price;
 
     public String getModel() {
         return model;
@@ -58,6 +48,25 @@ public class phone {
     public void setCamera(Integer camera) {
         this.camera = camera;
     }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+     
+
+    public phone(String model, Integer ram, String processor, Integer camera, Integer price) {
+        this.model = model;
+        this.ram = ram;
+        this.processor = processor;
+        this.camera = camera;
+        this.price = price;
+    }
+
+    
 
    
 }

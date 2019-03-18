@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="432.0" prefWidth="614.0" style="-fx-background-color: #20120F;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication2.CompFXMLController">
+   <children>
+      <TableView fx:id="compTableView" layoutX="114.0" layoutY="42.0" prefHeight="311.0" prefWidth="470.0">
+        <columns>
+          <TableColumn fx:id="colCompModel" prefWidth="133.0" text="model" />
+          <TableColumn fx:id="colCompSSD" prefWidth="64.0" text="SSD" />
+            <TableColumn fx:id="colCompHDD" prefWidth="63.0" text="HDD" />
+            <TableColumn fx:id="colCompProcessor" prefWidth="133.0" text="processor" />
+            <TableColumn fx:id="colCompPrice" prefWidth="74.0" text="price" />
+        </columns>
+      </TableView>
+      <VBox layoutX="-9.0" layoutY="66.0" prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Button fx:id="compLenovoBtn" mnemonicParsing="false" onAction="#compLenovo" prefHeight="41.0" prefWidth="102.0" style="-fx-background-color: #e45652;" text="Lenovo" />
+            <Button fx:id="compAppleBtn" mnemonicParsing="false" onAction="#compApple" prefHeight="41.0" prefWidth="102.0" style="-fx-background-color: #e45652;" text="Apple" />
+            <Button fx:id="compDellBtn" mnemonicParsing="false" onAction="#compDell" prefHeight="41.0" prefWidth="102.0" style="-fx-background-color: #e45652;" text="Dell" />
+         </children>
+      </VBox>
+      <Button fx:id="compExitBtn" layoutX="552.0" layoutY="8.0" mnemonicParsing="false" onAction="#compExit" prefHeight="24.0" prefWidth="48.0" style="-fx-background-color: #e45652;" text="Exit" />
+      <Button fx:id="compBackBtn" layoutX="84.0" layoutY="365.0" mnemonicParsing="false" onAction="#compBack" prefHeight="24.0" prefWidth="48.0" style="-fx-background-color: #e45652;" text="back" />
+      <Button fx:id="compLogoutBtn" layoutX="505.0" layoutY="365.0" mnemonicParsing="false" onAction="#compLogOut" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #e45652;" text="Log Out" />
+   </children>
+</AnchorPane>
