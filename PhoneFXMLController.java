@@ -69,7 +69,7 @@ public class PhoneFXMLController implements Initializable {
         colPhoneCamera.setCellValueFactory(new PropertyValueFactory<>("camera"));
         phoneTableView.setItems(phoneData);
         
-        System.out.println("Bilgiler gösterildi");
+        System.out.println("Samsung telefonlar gösterildi");
         
     }
 
@@ -87,7 +87,7 @@ public class PhoneFXMLController implements Initializable {
         colPhoneCamera.setCellValueFactory(new PropertyValueFactory<>("camera"));
         phoneTableView.setItems(phoneData);
         
-        System.out.println("a");
+        System.out.println("Apple telefonlar gösterildi");
     }
 
     @FXML
@@ -114,40 +114,5 @@ public class PhoneFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    /*
-    private ObservableList<ObservableList> tablodoldur() throws SQLException, ClassNotFoundException{
-        return null;
-        /*
-        phoneData = FXCollections.observableArrayList();
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
-        String sql = "SELECT * from phoneTable";
-        ResultSet rs = connection.createStatement().executeQuery(sql);
-        for(int i=0 ; i<rs.getMetaData().getColumnCount(); i++){
-        final int j = i;
-        TableColumn col = new TableColumn(rs.getMetaData().getColumnName(i+1));
-        col.setCellValueFactory(new Callback<CellDataFeatures<ObservableList,String>,ObservableValue<String>>(){
-        public ObservableValue<String> call(CellDataFeatures<ObservableList, String> param) {
-        return new SimpleStringProperty(param.getValue().get(j).toString());
-        }
-        });
-        phoneTableView.getColumns().addAll(col);
-        System.out.println("Column ["+i+"] ");
-        while(rs.next()){
-        //Satırları yinele
-        ObservableList<String> row = FXCollections.observableArrayList();
-        for( i=1 ; i<=rs.getMetaData().getColumnCount(); i++){
-        //sütunları yinele
-        row.add(rs.getString(i));
-        }
-        System.out.println("Satır eklendi "+row );
-        phoneData.add(row);
-        
-        }
-        phoneTableView.setItems(phoneData);
-        }
-         
-        return null;
-   
-  
-}  */
+    
 }
