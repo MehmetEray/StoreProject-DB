@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.BookFXMLController">
    <children>
-      <TableView layoutX="45.0" layoutY="142.0" prefHeight="222.0" prefWidth="510.0">
+      <TableView layoutX="48.0" layoutY="142.0" prefHeight="222.0" prefWidth="510.0">
          <columns>
             <TableColumn prefWidth="264.0" text="book's name" />
             <TableColumn minWidth="0.0" prefWidth="113.0" text="book's page" />
@@ -23,8 +23,10 @@
       <CheckBox layoutX="382.0" layoutY="41.0" mnemonicParsing="false" text="200-300" textFill="#fcf6f6" />
       <CheckBox layoutX="278.0" layoutY="41.0" mnemonicParsing="false" text="100-200" textFill="#fcf6f6" />
       <CheckBox layoutX="191.0" layoutY="41.0" mnemonicParsing="false" text="0-100" textFill="#fcf6f6" />
-      <Button fx:id="showbook" layoutX="233.0" layoutY="102.0" mnemonicParsing="false" onAction="#showbook" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="SHOW" />
+      <Button fx:id="showbook" layoutX="233.0" layoutY="102.0" mnemonicParsing="false" onAction="#showbook" prefHeight="21.0" prefWidth="97.0" style="-fx-background-color: #e45652;" text="SHOW" />
       <Label layoutX="48.0" layoutY="77.0" text="select price please" textFill="#fcf9f9" />
-      <Button fx:id="exitbook" layoutX="541.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitBook" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
+      <Button fx:id="exitbook" layoutX="555.0" layoutY="-1.0" mnemonicParsing="false" onAction="#exitBook" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
+      <Button fx:id="bookBackBtn" layoutX="45.0" layoutY="364.0" mnemonicParsing="false" onAction="#bookBack" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="back" />
+      <Button fx:id="bookLogOutBtn" layoutX="498.0" layoutY="364.0" mnemonicParsing="false" onAction="#bookLogOut" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #e45652;" text="Log Out" />
    </children>
 </AnchorPane>

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,6 +29,13 @@ import javafx.stage.Stage;
  * @author mehmet eray
  */
 public class LoginFXMLController implements Initializable {
+
+    @FXML
+    private PasswordField passwordInsert;
+
+     
+    @FXML
+    private TextField usernameInsert;
 
     @FXML
     private AnchorPane menuPane;
@@ -52,12 +60,13 @@ public class LoginFXMLController implements Initializable {
 
     @FXML
     void signIn(ActionEvent event) throws IOException, SQLException { 
-        /*Parent login = (AnchorPane)FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
-        Scene sceneLogin = new Scene(login, 600, 450);
-        Stage loginStage = (Stage) menuPane.getScene().getWindow();
+        /*
         loginStage.setScene(sceneLogin);*/
+        Stage stage=new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
+        stage.setScene(new Scene(root,650,500));
+        stage.show();
         
-        loginClass.insert(usernametxtfield.getText(),passwordtxtfield.getText());
     }
        @FXML
     void forgot(ActionEvent event) {
@@ -65,12 +74,12 @@ public class LoginFXMLController implements Initializable {
     }
         @FXML
     void exitLogin(ActionEvent event) {
-            
+            Platform.exit();
     }
     
     @FXML
-    void signUp(ActionEvent event) {
-
+    void signUp(ActionEvent event) throws SQLException {
+         loginClass.insert(usernameInsert.getText(),passwordInsert.getText());
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

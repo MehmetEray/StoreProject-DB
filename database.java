@@ -1,6 +1,5 @@
 package javafxapplication2;
 
-
 import com.sun.rowset.CachedRowSetImpl;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,16 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author mehmet eray
+/*@author mehmet eray
  */
 public class database {
     private static final String jdbc_driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
@@ -27,7 +17,6 @@ public class database {
     public static void dbconnect() throws ClassNotFoundException, SQLException{
         Class.forName(jdbc_driver);
         System.out.println("jdbc driver has been registered");
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
     }
     
     /*Connection con = null;

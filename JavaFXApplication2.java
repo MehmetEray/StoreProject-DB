@@ -26,7 +26,7 @@ public class JavaFXApplication2 extends Application {
     public void start(Stage primaryStage) throws IOException {
         
         Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        Scene scene = new Scene(root, 600, 450);
+        Scene scene = new Scene(root, 650, 500);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

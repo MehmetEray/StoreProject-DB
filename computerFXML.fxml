@@ -23,6 +23,8 @@
             <TableColumn prefWidth="124.0" text="camera" />
          </columns>
       </TableView>
-      <Button layoutX="522.0" layoutY="361.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
+      <Button fx:id="computerExit" layoutX="535.0" layoutY="-1.0" mnemonicParsing="false" onAction="#computerExit" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
+      <Button fx:id="computerBackBtn" layoutX="63.0" layoutY="344.0" mnemonicParsing="false" onAction="#computerBack" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="back" />
+      <Button fx:id="computerLogOutBtn" layoutX="478.0" layoutY="344.0" mnemonicParsing="false" onAction="#computerLogOut" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #e45652;" text="Log Out" />
    </children>
 </AnchorPane>
