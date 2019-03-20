@@ -25,6 +25,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import static javafxapplication2.PhoneFXMLController.connection;
 import javax.swing.JOptionPane;
 
@@ -58,6 +59,7 @@ public class LoginFXMLController implements Initializable {
             Stage stage=new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("adminPanelFXML.fxml"));
             stage.setScene(new Scene(root,800,800));
+            stage.initStyle(StageStyle.TRANSPARENT);
             stage.show();
             System.out.println("Matched");
             signInBtn.getScene().getWindow().hide();
@@ -66,6 +68,7 @@ public class LoginFXMLController implements Initializable {
             Stage stage=new Stage();
             Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
             stage.setScene(new Scene(root,800,850));
+            stage.initStyle(StageStyle.TRANSPARENT);
             stage.show();
             System.out.println("Didn't matched");
             signInBtn.getScene().getWindow().hide();

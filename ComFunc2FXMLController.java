@@ -5,6 +5,7 @@
  */
 package javafxapplication2;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,16 +15,22 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import static javafxapplication2.PhoneFunc2FXMLController.connection;
 import javax.swing.JOptionPane;
 
@@ -45,7 +52,11 @@ public class ComFunc2FXMLController implements Initializable {
     @FXML private TableColumn<?, ?> colCompHDD;
     @FXML private Button adminCompDeleteBtn;
     @FXML private TableColumn<?, ?> colCompPrice;
-
+    @FXML
+    private Button adminExitBtn;
+    @FXML
+    private Button adminBackBtn;
+    
     @FXML
     void compDelete(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -79,5 +90,20 @@ public class ComFunc2FXMLController implements Initializable {
         colCompPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         adminCompTableView.setItems(compData);
         System.out.println("Bilgisayarlar gösterildi");
+    }
+    
+    @FXML
+    void adminBack(ActionEvent event) throws IOException {
+        Stage stage=new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("adminPanelFXML.fxml"));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.show();
+        adminBackBtn.getScene().getWindow().hide();
+    }
+
+    @FXML
+    void adminExit(ActionEvent event) {
+        Platform.exit();
     }
 }

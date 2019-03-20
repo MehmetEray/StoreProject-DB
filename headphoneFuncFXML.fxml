@@ -6,8 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication2.HeadphoneFuncFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.HeadphoneFuncFXMLController">
    <children>
       <Label layoutX="73.0" layoutY="98.0" text="Lütfen eklemek istediğiniz kulaklık modelini giriniz" textFill="#f2eeee" />
       <Label layoutX="73.0" layoutY="139.0" text="Lütfen eklemek istediğiniz kulaklık modelini giriniz" textFill="#f2eeee" />
@@ -16,5 +15,7 @@
       <TextField fx:id="headPhoneModeltf" layoutX="371.0" layoutY="135.0" promptText="model" />
       <TextField fx:id="headPhonePricetf" layoutX="371.0" layoutY="173.0" promptText="price" />
       <Button fx:id="headPhoneInsertBtn" layoutX="239.0" layoutY="235.0" mnemonicParsing="false" onAction="#headPhoneInsert" prefHeight="25.0" prefWidth="123.0" text="Ekle" />
+      <Button fx:id="adminBackBtn" layoutX="53.0" layoutY="325.0" mnemonicParsing="false" onAction="#adminBack" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #e45652;" text="Back" />
+      <Button fx:id="adminExitBtn" layoutX="489.0" layoutY="29.0" mnemonicParsing="false" onAction="#adminExit" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: #e45652;" text="Exit" />
    </children>
 </AnchorPane>

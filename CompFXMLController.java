@@ -26,6 +26,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import static javafxapplication2.PhoneFXMLController.connection;
 
 /**
@@ -112,7 +113,8 @@ public class CompFXMLController implements Initializable {
     void compBack(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         compBackBtn.getScene().getWindow().hide();
     }
@@ -121,7 +123,8 @@ public class CompFXMLController implements Initializable {
     void compLogOut(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         compLogoutBtn.getScene().getWindow().hide();
     }

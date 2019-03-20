@@ -8,6 +8,7 @@ package javafxapplication2;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -23,7 +25,10 @@ import javafx.stage.Stage;
  * @author mehmet eray
  */
 public class AdminPanelFXMLController implements Initializable {
-
+     @FXML
+    private Button adminExitBtn;
+      @FXML
+    private Button adminBackBtn;
     @FXML
     private Button adminDeleteBookBtn;
 
@@ -53,7 +58,8 @@ public class AdminPanelFXMLController implements Initializable {
     void adminInsertBook(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("bookFuncFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         adminInsertBookBtn.getScene().getWindow().hide();
     }
@@ -62,7 +68,8 @@ public class AdminPanelFXMLController implements Initializable {
     void adminDeleteBook(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("bookFunc2FXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         adminDeleteBookBtn.getScene().getWindow().hide();
     }
@@ -71,7 +78,8 @@ public class AdminPanelFXMLController implements Initializable {
     void adminInsertPhone(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("phoneFuncFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         adminInsertPhoneBtn.getScene().getWindow().hide();
     }
@@ -80,7 +88,8 @@ public class AdminPanelFXMLController implements Initializable {
     void adminDeletePhone(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("phoneFunc2FXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         adminInsertPhoneBtn.getScene().getWindow().hide();
     }
@@ -89,7 +98,8 @@ public class AdminPanelFXMLController implements Initializable {
     void adminInsertComp(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("comFuncFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         adminInsertPhoneBtn.getScene().getWindow().hide();
     }
@@ -98,7 +108,8 @@ public class AdminPanelFXMLController implements Initializable {
     void adminDeleteComp(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("comFunc2FXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         adminInsertPhoneBtn.getScene().getWindow().hide();
     }
@@ -107,7 +118,8 @@ public class AdminPanelFXMLController implements Initializable {
     void adminDeleteHeadphone(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("headphoneFunc2FXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         adminInsertPhoneBtn.getScene().getWindow().hide();
     }
@@ -115,7 +127,8 @@ public class AdminPanelFXMLController implements Initializable {
     void adminInsertHeadphone(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("headphoneFuncFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         adminInsertPhoneBtn.getScene().getWindow().hide();
     }
@@ -123,7 +136,22 @@ public class AdminPanelFXMLController implements Initializable {
     void adminLogOut(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.show();
+        adminLogOut.getScene().getWindow().hide();
+    }
+     @FXML
+    void adminExit(ActionEvent event) {
+        Platform.exit();
+    }
+
+    @FXML
+    void adminBack(ActionEvent event) throws IOException {
+        Stage stage=new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         adminLogOut.getScene().getWindow().hide();
     }

@@ -26,6 +26,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import static javafxapplication2.PhoneFXMLController.connection;
 
 /**
@@ -107,7 +108,8 @@ public class HeadphonesFXMLController implements Initializable {
     void eadPhoneBack(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
-        stage.setScene(new Scene(root,650,500));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
     }
 
@@ -115,7 +117,8 @@ public class HeadphonesFXMLController implements Initializable {
     void headPhoneLogOut(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        stage.setScene(new Scene(root,650,500));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
     }
     @FXML

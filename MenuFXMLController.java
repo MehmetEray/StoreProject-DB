@@ -8,6 +8,7 @@ package javafxapplication2;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -37,12 +39,14 @@ public class MenuFXMLController implements Initializable {
 
     @FXML
     private Button phonesBtn;
-
+    @FXML
+    private Button phoneexit;
     @FXML
     void headShow(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("headphonesFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         headBtn.getScene().getWindow().hide();
     }
@@ -51,7 +55,8 @@ public class MenuFXMLController implements Initializable {
     void compShow(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("compFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         compBtn.getScene().getWindow().hide();
     }
@@ -60,7 +65,8 @@ public class MenuFXMLController implements Initializable {
     void phonesShow(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("phoneFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         System.out.println("Telefonlara giriş yapıldı");
         phonesBtn.getScene().getWindow().hide();
@@ -69,9 +75,14 @@ public class MenuFXMLController implements Initializable {
     void booksShow(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("bookFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         booksBtn.getScene().getWindow().hide();
+    }
+    @FXML
+    void phoneExit(ActionEvent event) {
+        Platform.exit();
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

@@ -6,8 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication2.BookFuncFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.BookFuncFXMLController">
    <children>
       <Label layoutX="59.0" layoutY="89.0" text="Lütfen eklemek istediğiniz kitabın adını giriniz" textFill="#f2eeee" />
       <Label layoutX="59.0" layoutY="117.0" text="Lütfen eklemek istediğiniz kitabın yazarını giriniz" textFill="#f2eeee" />
@@ -17,6 +16,8 @@
       <TextField fx:id="authortf" layoutX="349.0" layoutY="113.0" promptText="author" />
       <TextField fx:id="typetf" layoutX="349.0" layoutY="145.0" promptText="type" />
       <TextField fx:id="pricetf" layoutX="349.0" layoutY="173.0" promptText="price" />
-      <Button fx:id="bookInsertBtn" layoutX="243.0" layoutY="216.0" mnemonicParsing="false" onAction="#bookInsert" prefHeight="25.0" prefWidth="135.0" text="Ekle" />
+      <Button fx:id="bookInsertBtn" layoutX="243.0" layoutY="243.0" mnemonicParsing="false" onAction="#bookInsert" prefHeight="25.0" prefWidth="135.0" text="Ekle" />
+      <Button fx:id="adminBackBtn" layoutX="59.0" layoutY="333.0" mnemonicParsing="false" onAction="#adminBack" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #e45652;" text="Back" />
+      <Button fx:id="adminExitBtn" layoutX="479.0" layoutY="25.0" mnemonicParsing="false" onAction="#adminExit" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: #e45652;" text="Exit" />
    </children>
 </AnchorPane>

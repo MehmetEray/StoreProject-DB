@@ -40,5 +40,6 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="phoneexit" layoutX="512.0" layoutY="334.0" mnemonicParsing="false" onAction="#phoneExit" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
    </children>
 </AnchorPane>

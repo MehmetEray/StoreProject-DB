@@ -15,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  *
@@ -26,8 +27,9 @@ public class JavaFXApplication2 extends Application {
     public void start(Stage primaryStage) throws IOException {
         
         Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        Scene scene = new Scene(root, 650, 500);
+        Scene scene = new Scene(root, 600, 500);
         primaryStage.setScene(scene);
+        primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
     }
 

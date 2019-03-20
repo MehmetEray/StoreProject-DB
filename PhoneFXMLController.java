@@ -30,6 +30,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import static javafxapplication2.PhoneFXMLController.phoneData;
 
 /**
@@ -118,7 +119,8 @@ public class PhoneFXMLController implements Initializable {
     void logoutPhone(ActionEvent event) throws IOException {
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         logoutphone.getScene().getWindow().hide();
     }
@@ -127,7 +129,8 @@ public class PhoneFXMLController implements Initializable {
         
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
-        stage.setScene(new Scene(root,800,850));
+        stage.setScene(new Scene(root,600,500));
+        stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         backBtn.getScene().getWindow().hide();
     }

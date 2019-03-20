@@ -6,20 +6,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication2.PhoneFunc2FXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.PhoneFunc2FXMLController">
    <children>
-      <TableView fx:id="adminPhoneTableView" layoutX="27.0" layoutY="19.0" prefHeight="231.0" prefWidth="549.0">
+      <TableView fx:id="adminPhoneTableView" layoutX="27.0" layoutY="19.0" prefHeight="231.0" prefWidth="532.0">
         <columns>
           <TableColumn fx:id="colAdminPhoneModel" prefWidth="136.0" text="model" />
           <TableColumn fx:id="colAdminPhoneRam" prefWidth="118.0" text="ram" />
             <TableColumn fx:id="colAdminPhoneProcessor" prefWidth="105.0" text="processor" />
-            <TableColumn fx:id="colAdminPhoneCamera" prefWidth="106.0" text="camera" />
-            <TableColumn fx:id="colAdminPhonePrice" prefWidth="82.0" text="price" />
+            <TableColumn fx:id="colAdminPhoneCamera" prefWidth="96.0" text="camera" />
+            <TableColumn fx:id="colAdminPhonePrice" prefWidth="92.0" text="price" />
         </columns>
       </TableView>
       <TextField fx:id="phoneModeltxtfield" layoutX="176.0" layoutY="272.0" />
       <Label layoutX="79.0" layoutY="276.0" text="Phone Model" textFill="#f8f6f6" />
       <Button fx:id="phoneDeleteBtn" layoutX="362.0" layoutY="272.0" mnemonicParsing="false" onAction="#phoneDelete" prefHeight="25.0" prefWidth="71.0" text="Delete" />
+      <Button fx:id="adminBackBtn" layoutX="48.0" layoutY="341.0" mnemonicParsing="false" onAction="#adminBack" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #e45652;" text="Back" />
+      <Button fx:id="adminExitBtn" layoutX="513.0" layoutY="341.0" mnemonicParsing="false" onAction="#adminExit" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: #e45652;" text="Exit" />
    </children>
 </AnchorPane>
