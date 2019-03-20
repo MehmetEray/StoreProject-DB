@@ -19,8 +19,12 @@ import javafx.collections.ObservableList;
  */
 public class loginClass{
     public static void insert(String userName,String password2) throws SQLException{
-        String sql = "insert into login(username,password) values ('"+ userName+ "','"+ password2 + "')";
+        String typ = "user";
+        String sql = "insert into login(username,password,type) values ('"+ userName +"','"+ password2 +"','"+ typ +"')";
+        //String sql = "insert into login(username,password,type) values '"+ userName +"','"+ password2 +"'" + typ;
+        System.out.println("NP");
         database.dbexecuteQuery(sql);
+        System.out.println("NP");
     }
     public static ObservableList<loginClass> search(String usernameSearch){
         String sql = "select * from login where username = " + usernameSearch;

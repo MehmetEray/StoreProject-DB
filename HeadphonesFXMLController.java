@@ -47,7 +47,8 @@ public class HeadphonesFXMLController implements Initializable {
     @FXML private TableColumn<headphone, String> colHeadphoneModel;
     @FXML private TableColumn<headphone, String> colHeadphoneBrand;
     @FXML private TableColumn<headphone, Integer> colHeadphonePrice;
-    
+     @FXML
+    private Button headphoneBuyBtn;
    
 
     @FXML
@@ -116,6 +117,10 @@ public class HeadphonesFXMLController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
         stage.setScene(new Scene(root,650,500));
         stage.show();
+    }
+    @FXML
+    void headphoneBuy(ActionEvent event) {
+
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

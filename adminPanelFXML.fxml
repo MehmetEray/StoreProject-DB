@@ -31,5 +31,6 @@
             <Font size="18.0" />
          </font>
       </Label>
+      <Button fx:id="adminLogOut" layoutX="347.0" layoutY="397.0" mnemonicParsing="false" onAction="#adminLogOut" prefHeight="25.0" prefWidth="123.0" text="Log Out" />
    </children>
 </AnchorPane>

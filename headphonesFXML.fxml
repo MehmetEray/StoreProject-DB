@@ -25,5 +25,6 @@
       <Button fx:id="exitHead" layoutX="542.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitHead" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
       <Button fx:id="headPhoneBackBtn" layoutX="57.0" layoutY="344.0" mnemonicParsing="false" onAction="#eadPhoneBack" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="back" />
       <Button fx:id="headphoneLogOutBtn" layoutX="496.0" layoutY="344.0" mnemonicParsing="false" onAction="#headPhoneLogOut" prefHeight="31.0" prefWidth="79.0" style="-fx-background-color: #e45652;" text="Log Out" />
+      <Button fx:id="headphoneBuyBtn" layoutX="370.0" layoutY="344.0" mnemonicParsing="false" onAction="#headphoneBuy" prefHeight="31.0" prefWidth="79.0" text="Buy" />
    </children>
 </AnchorPane>

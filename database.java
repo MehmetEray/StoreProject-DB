@@ -62,10 +62,13 @@ public class database {
             rs = statement2.executeQuery(sqlQuery);
             crs = new CachedRowSetImpl();
             crs.populate(rs);
+            System.out.println("Problem is dbexecute");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Problem is dbexecute");
         } catch (SQLException ex) {
             Logger.getLogger(database.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Problem is dbexecute");
         }finally{
             if(rs != null){
                 rs.close();

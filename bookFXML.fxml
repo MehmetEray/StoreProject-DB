@@ -8,7 +8,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="449.0" prefWidth="606.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.BookFXMLController">
    <children>
-      <TableView fx:id="bookTableview" layoutX="48.0" layoutY="141.0" prefHeight="222.0" prefWidth="510.0">
+      <TableView fx:id="bookTableview" layoutX="48.0" layoutY="35.0" prefHeight="222.0" prefWidth="510.0">
          <columns>
             <TableColumn fx:id="colBookName" prefWidth="159.0" text="book's name" />
             <TableColumn fx:id="colBookAuthor" minWidth="0.0" prefWidth="163.0" text="book's author" />
@@ -16,18 +16,10 @@
             <TableColumn fx:id="colBookPrice" minWidth="0.0" prefWidth="95.0" text="book's price" />
          </columns>
       </TableView>
-      <CheckBox layoutX="480.0" layoutY="41.0" mnemonicParsing="false" text="200-.." textFill="#fcf6f6" />
-      <CheckBox layoutX="398.0" layoutY="78.0" mnemonicParsing="false" text="100-.." textFill="#fcf6f6" />
-      <CheckBox layoutX="286.0" layoutY="78.0" mnemonicParsing="false" text="10-100" textFill="#fcf6f6" />
-      <CheckBox layoutX="191.0" layoutY="77.0" mnemonicParsing="false" text="0-10" textFill="#fcf6f6" />
-      <Label layoutX="48.0" layoutY="41.0" text="select page please" textFill="#fcf9f9" />
-      <CheckBox layoutX="382.0" layoutY="41.0" mnemonicParsing="false" text="200-300" textFill="#fcf6f6" />
-      <CheckBox layoutX="278.0" layoutY="41.0" mnemonicParsing="false" text="100-200" textFill="#fcf6f6" />
-      <CheckBox layoutX="191.0" layoutY="41.0" mnemonicParsing="false" text="0-100" textFill="#fcf6f6" />
-      <Button fx:id="showbook" layoutX="233.0" layoutY="102.0" mnemonicParsing="false" onAction="#showbook" prefHeight="21.0" prefWidth="97.0" style="-fx-background-color: #e45652;" text="SHOW" />
-      <Label layoutX="48.0" layoutY="77.0" text="select price please" textFill="#fcf9f9" />
+      <Button fx:id="showbook" layoutX="255.0" layoutY="272.0" mnemonicParsing="false" onAction="#showbook" prefHeight="21.0" prefWidth="97.0" style="-fx-background-color: #e45652;" text="SHOW" />
       <Button fx:id="exitbook" layoutX="555.0" layoutY="-1.0" mnemonicParsing="false" onAction="#exitBook" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
       <Button fx:id="bookBackBtn" layoutX="43.0" layoutY="386.0" mnemonicParsing="false" onAction="#bookBack" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="back" />
       <Button fx:id="bookLogOutBtn" layoutX="496.0" layoutY="386.0" mnemonicParsing="false" onAction="#bookLogOut" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #e45652;" text="Log Out" />
+      <Button fx:id="bookBuyBtn" layoutX="495.0" layoutY="325.0" mnemonicParsing="false" onAction="#bookBuy" prefHeight="31.0" prefWidth="83.0" text="Buy" />
    </children>
 </AnchorPane>

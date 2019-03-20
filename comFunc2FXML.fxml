@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication2.ComFunc2FXMLController">
+   <children>
+      <TableView fx:id="adminCompTableView" layoutX="27.0" layoutY="20.0" prefHeight="260.0" prefWidth="552.0">
+        <columns>
+          <TableColumn fx:id="colCompModel" prefWidth="126.0" text="model" />
+          <TableColumn fx:id="colCompSSD" prefWidth="119.0" text="SSD" />
+            <TableColumn fx:id="colCompHDD" prefWidth="107.0" text="HDD" />
+            <TableColumn fx:id="colCompProcessor" prefWidth="100.0" text="processor" />
+            <TableColumn fx:id="colCompPrice" prefWidth="95.0" text="price" />
+        </columns>
+      </TableView>
+      <Label layoutX="57.0" layoutY="299.0" text="Computer model" textFill="#f8f0f0" />
+      <TextField fx:id="adminCompDeletetxtfield" layoutX="164.0" layoutY="295.0" />
+      <Button fx:id="adminCompDeleteBtn" layoutX="376.0" layoutY="295.0" mnemonicParsing="false" onAction="#compDelete" prefHeight="25.0" prefWidth="91.0" text="Delete" />
+   </children>
+</AnchorPane>

@@ -16,6 +16,7 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -23,9 +24,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import static javafxapplication2.PhoneFXMLController.phoneData;
 
@@ -49,7 +52,9 @@ public class PhoneFXMLController implements Initializable {
     @FXML private TableColumn<phone, Integer> colPhoneCamera;
     @FXML private TableColumn<phone, Integer> colPhonePrice;
     @FXML private TableView<phone> phoneTableView;
-    
+    @FXML private Button phoneBuyBtn; private Label labelPhonelbl;
+    @FXML private Label phonelbl;
+   
     
     static ObservableList<phone> phoneData = FXCollections.observableArrayList();
     @FXML
@@ -120,7 +125,6 @@ public class PhoneFXMLController implements Initializable {
      @FXML
     void phoneBack(ActionEvent event) throws IOException {
         
-
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
         stage.setScene(new Scene(root,800,850));
@@ -129,15 +133,18 @@ public class PhoneFXMLController implements Initializable {
     }
    
     @FXML
-    void phoneTableviewSelect(ActionEvent event) { /*
-        phoneData phone = phoneTableView.getSelectionModel().getSelectedItems();
-        if(phone == null){
-            phoneTextFlow.setText("Nothing selected");
+    void phoneTableviewSelect(ActionEvent event) { 
+        
+        phoneTableView.setOnMousePressed(new EventHandler<MouseEvent>(){
+            public void handle(MouseEvent event){
+                phonelbl.setText("asd");
+            }
         }
-        else{
-            String phoneModel = pho
-        }
-        */ 
+        );
+    }
+    @FXML
+    void phoneBuy(ActionEvent event) {
+        
     }
    
     @Override

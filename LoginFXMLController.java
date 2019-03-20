@@ -71,18 +71,11 @@ public class LoginFXMLController implements Initializable {
             signInBtn.getScene().getWindow().hide();
         }
         
-        
-        
-    
-        
-        
     }
         
         //loginpane.setVisible(Boolean.FALSE);
         //btn_login.getScene().getWindow().hide();
-        
-        
-    
+       
        @FXML
     void forgot(ActionEvent event) {
 
@@ -95,7 +88,6 @@ public class LoginFXMLController implements Initializable {
     @FXML
     void signUp(ActionEvent event) throws SQLException {
          loginClass.insert(usernameInsert.getText(),passwordInsert.getText());
-         JOptionPane.showMessageDialog(null,"You signed up!");
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

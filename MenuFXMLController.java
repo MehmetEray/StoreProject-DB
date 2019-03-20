@@ -50,7 +50,7 @@ public class MenuFXMLController implements Initializable {
     @FXML
     void compShow(ActionEvent event) throws IOException {
         Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("computerFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("compFXML.fxml"));
         stage.setScene(new Scene(root,800,850));
         stage.show();
         compBtn.getScene().getWindow().hide();

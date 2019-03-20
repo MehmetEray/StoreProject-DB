@@ -16,38 +16,37 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import static javafxapplication2.PhoneFXMLController.connection;
+import static javafxapplication2.BookFuncFXMLController.connection;
 import javax.swing.JOptionPane;
 
-/**
- * FXML Controller class
- *
- * @author mehmet eray
- */
-public class BookFuncFXMLController implements Initializable {
+
+public class PhoneFuncFXMLController implements Initializable {
     private static final String conStr = "jdbc:sqlserver://localhost:1433;databaseName=project;tablename=phoneTable;integratedSecurity = true";
     static Connection connection;
     PreparedStatement ps = null;
-    @FXML private TextField typetf;
-    @FXML private TextField authortf;
-    @FXML private TextField pricetf;
-    @FXML private Button bookInsertBtn;
-    @FXML private TextField bookNametf;
-
-    @FXML
-    void bookInsert(ActionEvent event) throws SQLException {
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
-        String query = "insert into bookTable values(?,?,?,?)";
-        PreparedStatement pst = connection.prepareStatement(query);
-        pst.setString(1,bookNametf.getText());
-        pst.setString(2,authortf.getText());
-        pst.setString(3,typetf.getText());
-        pst.setString(4,pricetf.getText());
-        pst.executeUpdate();
-        JOptionPane.showMessageDialog(null, "Kitap eklendi");
-    }
+    @FXML private Button phoneInserttf;
+    @FXML private TextField phoneModeltf;
+    @FXML private TextField phoneRamtf;
+    @FXML private TextField phoneProcessortf;
+    @FXML private TextField phoneCameratf;
+    @FXML private TextField phonePricetf;
     
+    @FXML
+    void phoneInsert(ActionEvent event) throws SQLException {
+        connection = DriverManager.getConnection(conStr,"sa","123456789");
+        String query = "insert into phone_Table values(?,?,?,?,?)";
+        PreparedStatement pst = connection.prepareStatement(query);
+        pst.setString(1,phoneModeltf.getText());
+        pst.setString(2,phoneRamtf.getText());
+        pst.setString(3,phoneProcessortf.getText());
+        pst.setString(4,phoneCameratf.getText());
+        pst.setString(5,phonePricetf.getText());
+        pst.executeUpdate();
+        JOptionPane.showMessageDialog(null, "Telefon eklendi");
+    }
     @Override
-    public void initialize(URL url, ResourceBundle rb) {}    
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
     
 }

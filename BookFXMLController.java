@@ -40,7 +40,8 @@ public class BookFXMLController implements Initializable {
     @FXML private Button exitbook;
     @FXML private Button bookBackBtn;
     @FXML private Button bookLogOutBtn;
-    
+    @FXML private Button bookBuyBtn;
+   
    
     @FXML private TableView<book> bookTableview;
     @FXML private TableColumn<book, String> colBookType;
@@ -81,6 +82,10 @@ public class BookFXMLController implements Initializable {
         Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
         stage.setScene(new Scene(root,800,850));
         stage.show();
+    }
+    @FXML
+    void bookBuy(ActionEvent event) {
+
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

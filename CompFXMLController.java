@@ -43,7 +43,8 @@ public class CompFXMLController implements Initializable {
     @FXML private Button compLogoutBtn;
     @FXML private Button compLenovoBtn;
     @FXML private Button compExitBtn;
-    
+    @FXML
+    private Button compBuyBtn;
     @FXML private TableColumn<comp, String> colCompModel;
     @FXML private TableColumn<comp, String> colCompProcessor;
     @FXML private TableColumn<comp, Integer> colCompSSD;
@@ -71,9 +72,9 @@ public class CompFXMLController implements Initializable {
     @FXML
     void compApple(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rs2 = connection.createStatement().executeQuery("Exec comps apple");
-        while(rs2.next()){
-            compData.add(new comp(rs2.getString("model"),rs2.getInt("SSD"),rs2.getInt("HDD"),rs2.getString("processor"),rs2.getInt("price")));
+        ResultSet rs3 = connection.createStatement().executeQuery("Exec comps apple");
+        while(rs3.next()){
+            compData.add(new comp(rs3.getString("model"),rs3.getInt("SSD"),rs3.getInt("HDD"),rs3.getString("processor"),rs3.getInt("price")));
         }
         colCompModel.setCellValueFactory(new PropertyValueFactory<>("model"));
         colCompSSD.setCellValueFactory(new PropertyValueFactory<>("SSD"));
@@ -88,9 +89,9 @@ public class CompFXMLController implements Initializable {
     @FXML
     void compDell(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rs2 = connection.createStatement().executeQuery("Exec comps dell");
-        while(rs2.next()){
-            compData.add(new comp(rs2.getString("model"),rs2.getInt("SSD"),rs2.getInt("HDD"),rs2.getString("processor"),rs2.getInt("price")));
+        ResultSet rs4 = connection.createStatement().executeQuery("Exec comps dell");
+        while(rs4.next()){
+            compData.add(new comp(rs4.getString("model"),rs4.getInt("SSD"),rs4.getInt("HDD"),rs4.getString("processor"),rs4.getInt("price")));
         }
         colCompModel.setCellValueFactory(new PropertyValueFactory<>("model"));
         colCompSSD.setCellValueFactory(new PropertyValueFactory<>("SSD"));
@@ -123,6 +124,10 @@ public class CompFXMLController implements Initializable {
         stage.setScene(new Scene(root,800,850));
         stage.show();
         compLogoutBtn.getScene().getWindow().hide();
+    }
+    @FXML
+    void compBuy(ActionEvent event) {
+
     }
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
