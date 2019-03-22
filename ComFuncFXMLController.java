@@ -38,10 +38,9 @@ public class ComFuncFXMLController implements Initializable {
     @FXML private TextField compRamtxtfield;
     @FXML private TextField compCameratxtfield;
     @FXML private TextField compPricetxtfield;
-    @FXML
-    private Button adminExitBtn;
-    @FXML
-    private Button adminBackBtn;
+    @FXML private Button adminExitBtn;
+    @FXML private Button adminBackBtn;
+    generalFunc gf = new generalFunc();
     @FXML
     void compInsert(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -57,12 +56,7 @@ public class ComFuncFXMLController implements Initializable {
     }
     @FXML
     void adminBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("adminPanelFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminBackBtn.getScene().getWindow().hide();
+        gf.openStageFunc("adminPanelFXML.fxml", adminBackBtn);
     }
 
     @FXML

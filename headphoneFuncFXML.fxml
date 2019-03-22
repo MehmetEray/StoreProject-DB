@@ -8,14 +8,14 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.HeadphoneFuncFXMLController">
    <children>
-      <Label layoutX="73.0" layoutY="98.0" text="Lütfen eklemek istediğiniz kulaklık modelini giriniz" textFill="#f2eeee" />
-      <Label layoutX="73.0" layoutY="139.0" text="Lütfen eklemek istediğiniz kulaklık modelini giriniz" textFill="#f2eeee" />
-      <Label layoutX="73.0" layoutY="177.0" text="Lütfen eklemek istediğiniz kulaklık fiyatını giriniz" textFill="#f2eeee" />
-      <TextField fx:id="headPhoneBrandtf" layoutX="371.0" layoutY="94.0" promptText="brand" />
-      <TextField fx:id="headPhoneModeltf" layoutX="371.0" layoutY="135.0" promptText="model" />
-      <TextField fx:id="headPhonePricetf" layoutX="371.0" layoutY="173.0" promptText="price" />
-      <Button fx:id="headPhoneInsertBtn" layoutX="239.0" layoutY="235.0" mnemonicParsing="false" onAction="#headPhoneInsert" prefHeight="25.0" prefWidth="123.0" text="Ekle" />
+      <Label layoutX="61.0" layoutY="105.0" text="Please enter what you want brand" textFill="#f2eeee" />
+      <Label layoutX="61.0" layoutY="146.0" text="Please enter what you want model" textFill="#f2eeee" />
+      <Label layoutX="61.0" layoutY="184.0" text="Please enter what you want price" textFill="#f2eeee" />
+      <TextField fx:id="headPhoneBrandtf" layoutX="349.0" layoutY="98.0" promptText="brand" />
+      <TextField fx:id="headPhoneModeltf" layoutX="349.0" layoutY="139.0" promptText="model" />
+      <TextField fx:id="headPhonePricetf" layoutX="349.0" layoutY="177.0" promptText="price" />
+      <Button fx:id="headPhoneInsertBtn" layoutX="239.0" layoutY="235.0" mnemonicParsing="false" onAction="#headPhoneInsert" prefHeight="25.0" prefWidth="123.0" text="Insert System" />
       <Button fx:id="adminBackBtn" layoutX="53.0" layoutY="325.0" mnemonicParsing="false" onAction="#adminBack" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #e45652;" text="Back" />
-      <Button fx:id="adminExitBtn" layoutX="489.0" layoutY="29.0" mnemonicParsing="false" onAction="#adminExit" prefHeight="25.0" prefWidth="39.0" style="-fx-background-color: #e45652;" text="Exit" />
+      <Button fx:id="adminExitBtn" layoutX="465.0" layoutY="29.0" mnemonicParsing="false" onAction="#adminExit" prefHeight="31.0" prefWidth="63.0" style="-fx-background-color: #e45652;" text="Exit" />
    </children>
 </AnchorPane>

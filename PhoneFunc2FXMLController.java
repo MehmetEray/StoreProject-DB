@@ -55,11 +55,27 @@ public class PhoneFunc2FXMLController implements Initializable {
     @FXML private TableColumn<?, ?> colAdminPhonePrice;
     @FXML private TextField phoneModeltxtfield;
     @FXML private Button phoneDeleteBtn;
+    @FXML private Button adminExitBtn;
+    @FXML private Button adminBackBtn;
     @FXML
-    private Button adminExitBtn;
-     @FXML
-    private Button adminBackBtn;
-
+    private Button adminUpdateBtn;
+    @FXML
+    private TextField adminPricetf;
+    @FXML
+    void updatePhonePrice(ActionEvent event) throws SQLException {
+        connection = DriverManager.getConnection(conStr,"sa","123456789");
+        String query = "update phone_Table set price = ? where model = ?";
+        PreparedStatement pst = connection.prepareStatement(query);
+        pst.setString(1, adminPricetf.getText());
+        pst.setString(2, phoneModeltxtfield.getText());
+        pst.executeUpdate();
+        System.out.println("Updated");
+        JOptionPane.showMessageDialog(null,"Success");
+        phoneModeltxtfield.clear();
+        adminPricetf.clear();
+    }
+   
+    generalFunc gf = new generalFunc();
     @FXML
     void phoneDelete(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -70,7 +86,6 @@ public class PhoneFunc2FXMLController implements Initializable {
         System.out.println("deleted");
         JOptionPane.showMessageDialog(null,"Success");
         phoneModeltxtfield.clear();
-        
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -96,12 +111,7 @@ public class PhoneFunc2FXMLController implements Initializable {
     }
     @FXML
     void adminBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("adminPanelFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminBackBtn.getScene().getWindow().hide();
+        gf.openStageFunc("adminPanelFXML.fxml", adminBackBtn);
     }
 
     @FXML

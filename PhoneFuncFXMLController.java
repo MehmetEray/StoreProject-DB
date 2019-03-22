@@ -37,10 +37,9 @@ public class PhoneFuncFXMLController implements Initializable {
     @FXML private TextField phoneProcessortf;
     @FXML private TextField phoneCameratf;
     @FXML private TextField phonePricetf;
-    @FXML
-    private Button adminExitBtn;
-    @FXML
-    private Button adminBackBtn;
+    @FXML private Button adminExitBtn;
+    @FXML private Button adminBackBtn;
+    generalFunc gf = new generalFunc();
     @FXML
     void phoneInsert(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -56,12 +55,7 @@ public class PhoneFuncFXMLController implements Initializable {
     }
     @FXML
     void adminBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("adminPanelFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminBackBtn.getScene().getWindow().hide();
+        gf.openStageFunc("adminPanelFXML.fxml", adminBackBtn);
     }
 
     @FXML

@@ -18,15 +18,7 @@ public class database {
         Class.forName(jdbc_driver);
         System.out.println("jdbc driver has been registered");
     }
-    
-    /*Connection con = null;
-    Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-    String url = "jdbc:sqlserver://localhost:1433;databaseName=project;user=sa;password=123456789;integratedSecurity = true";
-    connection = DriverManager.getConnection(url);
-    System.out.println("Success");
-    java.sql.Statement state = con.createStatement();
-        
-    return con;*/
+   
             
     public static void dbdisconnect() throws SQLException{
         if(connection != null && !connection.isClosed()){
@@ -78,9 +70,6 @@ public class database {
             dbdisconnect();
         }
         return crs;
-        
-        
-        
         
     }
 }

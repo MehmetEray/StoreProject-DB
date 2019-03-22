@@ -31,6 +31,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import static javafxapplication2.HeadphoneFunc2FXMLController.connection;
 import static javafxapplication2.PhoneFunc2FXMLController.connection;
 import javax.swing.JOptionPane;
 
@@ -52,11 +53,14 @@ public class ComFunc2FXMLController implements Initializable {
     @FXML private TableColumn<?, ?> colCompHDD;
     @FXML private Button adminCompDeleteBtn;
     @FXML private TableColumn<?, ?> colCompPrice;
+    @FXML private Button adminExitBtn;
+    @FXML private Button adminBackBtn;
     @FXML
-    private Button adminExitBtn;
-    @FXML
-    private Button adminBackBtn;
-    
+    private TextField adminPricetf;
+     @FXML
+    private Button adminUpdateBtn;
+    static ObservableList<comp> compData = FXCollections.observableArrayList();
+    generalFunc gf = new generalFunc();
     @FXML
     void compDelete(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -68,7 +72,7 @@ public class ComFunc2FXMLController implements Initializable {
         JOptionPane.showMessageDialog(null,"Success");
         adminCompDeletetxtfield.clear();
     }
-    static ObservableList<comp> compData = FXCollections.observableArrayList();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -94,13 +98,22 @@ public class ComFunc2FXMLController implements Initializable {
     
     @FXML
     void adminBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("adminPanelFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminBackBtn.getScene().getWindow().hide();
+        gf.openStageFunc("adminPanelFXML.fxml", adminBackBtn);
     }
+    @FXML
+    void adminUpdate(ActionEvent event) throws SQLException {
+        connection = DriverManager.getConnection(conStr,"sa","123456789");
+        String query = "update headphonesTable set price = ? where model = ?";
+        PreparedStatement pst = connection.prepareStatement(query);
+        pst.setString(1, adminPricetf.getText());
+        pst.setString(2, adminCompDeletetxtfield.getText());
+        pst.executeUpdate();
+        System.out.println("Updated");
+        JOptionPane.showMessageDialog(null,"Success");
+        adminCompDeletetxtfield.clear();
+        adminPricetf.clear();
+    }
+
 
     @FXML
     void adminExit(ActionEvent event) {

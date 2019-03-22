@@ -45,27 +45,19 @@ public class HeadphoneFunc2FXMLController implements Initializable {
     static Connection connection;
     PreparedStatement ps = null;
     static ObservableList<headphone> headphonesData = FXCollections.observableArrayList();
+    @FXML private TextField headphoneModeltf;
+    @FXML private Button headphoneDeleteBtn;
+    @FXML private TableColumn<?, ?> colHeadphonePrice;
+    @FXML private TableColumn<?, ?> colHeadphoneModel;
+    @FXML private TableColumn<?, ?> colHeadphoneBrand;
+    @FXML private TableView<headphone> headphoneAdminTableView;
+    @FXML private Button adminExitBtn;
+    @FXML private Button adminBackBtn;
     @FXML
-    private TextField headphoneModeltf;
-
+    private TextField adminPricetf;
     @FXML
-    private TableColumn<?, ?> colHeadphonePrice;
-
-    @FXML
-    private Button headphoneDeleteBtn;
-
-    @FXML
-    private TableColumn<?, ?> colHeadphoneModel;
-
-    @FXML
-    private TableColumn<?, ?> colHeadphoneBrand;
-    @FXML
-    private TableView<headphone> headphoneAdminTableView;
-     @FXML
-    private Button adminExitBtn;
-
-    @FXML
-    private Button adminBackBtn;
+    private Button adminUpdateBtn;
+    generalFunc gf = new generalFunc();
     @FXML
     void headphoneDelete(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -77,7 +69,19 @@ public class HeadphoneFunc2FXMLController implements Initializable {
         JOptionPane.showMessageDialog(null,"Success");
         headphoneModeltf.clear();
     }
-    
+    @FXML
+    void adminUpdateHeadp(ActionEvent event) throws SQLException {
+        connection = DriverManager.getConnection(conStr,"sa","123456789");
+        String query = "update headphonesTable set price = ? where model = ?";
+        PreparedStatement pst = connection.prepareStatement(query);
+        pst.setString(1, adminPricetf.getText());
+        pst.setString(2, headphoneModeltf.getText());
+        pst.executeUpdate();
+        System.out.println("Updated");
+        JOptionPane.showMessageDialog(null,"Success");
+        headphoneModeltf.clear();
+        adminPricetf.clear();
+    }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
@@ -100,12 +104,7 @@ public class HeadphoneFunc2FXMLController implements Initializable {
     }
     @FXML
     void adminBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("adminPanelFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminBackBtn.getScene().getWindow().hide();
+        gf.openStageFunc("adminPanelFXML.fxml", adminBackBtn);
     }
 
     @FXML

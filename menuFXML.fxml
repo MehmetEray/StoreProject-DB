@@ -11,35 +11,19 @@
 
 <AnchorPane id="AnchorPane" fx:id="menuPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.MenuFXMLController">
    <children>
-      <ImageView fitHeight="91.0" fitWidth="150.0" layoutX="329.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Desktop/headphone.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="85.0" fitWidth="126.0" layoutX="124.0" layoutY="223.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Desktop/computer.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="91.0" fitWidth="150.0" layoutX="303.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Desktop/phone3.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="91.0" fitWidth="150.0" layoutX="112.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../../../Desktop/book.jpg" />
-         </image>
-      </ImageView>
-      <Button fx:id="headBtn" layoutX="318.0" layoutY="320.0" mnemonicParsing="false" onAction="#headShow" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="HEADPHONES" />
-      <Button fx:id="compBtn" layoutX="134.0" layoutY="320.0" mnemonicParsing="false" onAction="#compShow" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="COMPUTERS" />
-      <Button fx:id="phonesBtn" layoutX="318.0" layoutY="161.0" mnemonicParsing="false" onAction="#phonesShow" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="PHONES" textFill="#110000" />
-      <Button fx:id="booksBtn" layoutX="134.0" layoutY="161.0" mnemonicParsing="false" onAction="#booksShow" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="BOOKS" textFill="#0a0000" />
+      <Button fx:id="headBtn" layoutX="274.0" layoutY="248.0" mnemonicParsing="false" onAction="#headShow" prefHeight="50.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="HEADPHONES" />
+      <Button fx:id="compBtn" layoutX="78.0" layoutY="248.0" mnemonicParsing="false" onAction="#compShow" prefHeight="50.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="COMPUTERS" />
+      <Button fx:id="phonesBtn" layoutX="274.0" layoutY="97.0" mnemonicParsing="false" onAction="#phonesShow" prefHeight="50.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="PHONES" textFill="#110000" />
+      <Button fx:id="booksBtn" layoutX="78.0" layoutY="97.0" mnemonicParsing="false" onAction="#booksShow" prefHeight="50.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="BOOKS" textFill="#0a0000" />
       <Label layoutX="396.0" layoutY="17.0" prefHeight="38.0" prefWidth="200.0" style="-fx-font-family: Century Gothic;" text="CALIFORNIA STORE" textAlignment="CENTER" textFill="#f5ecec">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Button fx:id="phoneexit" layoutX="512.0" layoutY="334.0" mnemonicParsing="false" onAction="#phoneExit" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
+      <Label layoutX="78.0" layoutY="66.0" text="For Books" textFill="#f5f2f2" />
+      <Label layoutX="78.0" layoutY="222.0" text="For Computers" textFill="#f5f2f2" />
+      <Label layoutX="274.0" layoutY="66.0" text="For Phones" textFill="#f5f2f2" />
+      <Label layoutX="274.0" layoutY="222.0" text="For Headphones" textFill="#f5f2f2" />
    </children>
 </AnchorPane>

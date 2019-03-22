@@ -40,11 +40,9 @@ public class BookFuncFXMLController implements Initializable {
     @FXML private TextField pricetf;
     @FXML private Button bookInsertBtn;
     @FXML private TextField bookNametf;
-     @FXML
-    private Button adminExitBtn;
-     @FXML
-    private Button adminBackBtn;
-
+    @FXML private Button adminExitBtn;
+    @FXML private Button adminBackBtn;
+    generalFunc gf = new generalFunc();
     @FXML
     void bookInsert(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -59,12 +57,7 @@ public class BookFuncFXMLController implements Initializable {
     }
     @FXML
     void adminBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("adminPanelFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminBackBtn.getScene().getWindow().hide();
+        gf.openStageFunc("adminPanelFXML.fxml", adminBackBtn);
     }
 
     @FXML

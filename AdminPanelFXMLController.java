@@ -25,121 +25,59 @@ import javafx.stage.StageStyle;
  * @author mehmet eray
  */
 public class AdminPanelFXMLController implements Initializable {
-     @FXML
-    private Button adminExitBtn;
-      @FXML
-    private Button adminBackBtn;
-    @FXML
-    private Button adminDeleteBookBtn;
-
-    @FXML
-    private Button adminInsertCompBtn;
-
-    @FXML
-    private Button adminInsertHeadphoneBtn;
-
-    @FXML
-    private Button adminInsertPhoneBtn;
-
-    @FXML
-    private Button adminDeleteCompBtn;
-
-    @FXML
-    private Button adminDeleteHeadphoneBtn;
-
-    @FXML
-    private Button adminDeletePhoneBtn;
-
-    @FXML
-    private Button adminInsertBookBtn;
-    @FXML
-    private Button adminLogOut;
-    @FXML
+    @FXML private Button adminExitBtn;
+    @FXML private Button adminBackBtn;
+    @FXML private Button adminDeleteBookBtn;
+    @FXML private Button adminInsertCompBtn;
+    @FXML private Button adminInsertHeadphoneBtn;
+    @FXML private Button adminInsertPhoneBtn;
+    @FXML private Button adminDeleteCompBtn;
+    @FXML private Button adminDeleteHeadphoneBtn;
+    @FXML private Button adminDeletePhoneBtn;
+    @FXML private Button adminInsertBookBtn;
+    @FXML private Button adminLogOut;
+    generalFunc gf = new generalFunc();
+@FXML
     void adminInsertBook(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("bookFuncFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminInsertBookBtn.getScene().getWindow().hide();
+        gf.openStageFunc("bookFuncFXML.fxml", adminInsertBookBtn);
     }
 
     @FXML
     void adminDeleteBook(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("bookFunc2FXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminDeleteBookBtn.getScene().getWindow().hide();
+        gf.openStageFunc("bookFunc2FXML.fxml", adminDeleteBookBtn);
     }
 
     @FXML
     void adminInsertPhone(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("phoneFuncFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminInsertPhoneBtn.getScene().getWindow().hide();
+        gf.openStageFunc("phoneFuncFXML.fxml", adminInsertPhoneBtn);
     }
 
     @FXML
     void adminDeletePhone(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("phoneFunc2FXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminInsertPhoneBtn.getScene().getWindow().hide();
+        gf.openStageFunc("phoneFunc2FXML.fxml", adminDeletePhoneBtn);
     }
 
     @FXML
     void adminInsertComp(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("comFuncFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminInsertPhoneBtn.getScene().getWindow().hide();
+        gf.openStageFunc("comFuncFXML.fxml", adminInsertCompBtn);
     }
 
     @FXML
     void adminDeleteComp(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("comFunc2FXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminInsertPhoneBtn.getScene().getWindow().hide();
+        gf.openStageFunc("comFunc2FXML.fxml", adminDeleteCompBtn);
     }
 
     @FXML
     void adminDeleteHeadphone(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("headphoneFunc2FXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminInsertPhoneBtn.getScene().getWindow().hide();
+        gf.openStageFunc("headphoneFunc2FXML.fxml", adminDeleteHeadphoneBtn);
     }
      @FXML
     void adminInsertHeadphone(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("headphoneFuncFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminInsertPhoneBtn.getScene().getWindow().hide();
+        gf.openStageFunc("headphoneFuncFXML.fxml", adminInsertHeadphoneBtn);
     }
     @FXML
     void adminLogOut(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminLogOut.getScene().getWindow().hide();
+        gf.openStageFunc("loginFXML.fxml", adminLogOut);
     }
      @FXML
     void adminExit(ActionEvent event) {
@@ -148,16 +86,9 @@ public class AdminPanelFXMLController implements Initializable {
 
     @FXML
     void adminBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminLogOut.getScene().getWindow().hide();
+        gf.openStageFunc("loginFXML.fxml", adminBackBtn);
     }
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    public void initialize(URL url, ResourceBundle rb) { }    
     
 }

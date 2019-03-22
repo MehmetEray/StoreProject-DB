@@ -44,63 +44,29 @@ public class CompFXMLController implements Initializable {
     @FXML private Button compLogoutBtn;
     @FXML private Button compLenovoBtn;
     @FXML private Button compExitBtn;
-    @FXML
-    private Button compBuyBtn;
+    @FXML private Button compBuyBtn;
     @FXML private TableColumn<comp, String> colCompModel;
     @FXML private TableColumn<comp, String> colCompProcessor;
     @FXML private TableColumn<comp, Integer> colCompSSD;
     @FXML private TableColumn<comp, Integer> colCompHDD;
     @FXML private TableColumn<comp, Integer> colCompPrice;
     @FXML private TableView<comp> compTableView;
-
+    generalFunc gf = new generalFunc();
     @FXML
     void compLenovo(ActionEvent event) throws SQLException {
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rs2 = connection.createStatement().executeQuery("Exec comps lenovo");
-        while(rs2.next()){
-            compData.add(new comp(rs2.getString("model"),rs2.getInt("SSD"),rs2.getInt("HDD"),rs2.getString("processor"),rs2.getInt("price")));
-        }
-        colCompModel.setCellValueFactory(new PropertyValueFactory<>("model"));
-        colCompSSD.setCellValueFactory(new PropertyValueFactory<>("SSD"));
-        colCompHDD.setCellValueFactory(new PropertyValueFactory<>("HDD"));
-        colCompProcessor.setCellValueFactory(new PropertyValueFactory<>("processor"));
-        colCompPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-        compTableView.setItems(compData);
-        
+        showCompFunc("Exec comps lenovo");
         System.out.println("Lenovo bilgisayarlar gösterildi");
     }
 
     @FXML
     void compApple(ActionEvent event) throws SQLException {
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rs3 = connection.createStatement().executeQuery("Exec comps apple");
-        while(rs3.next()){
-            compData.add(new comp(rs3.getString("model"),rs3.getInt("SSD"),rs3.getInt("HDD"),rs3.getString("processor"),rs3.getInt("price")));
-        }
-        colCompModel.setCellValueFactory(new PropertyValueFactory<>("model"));
-        colCompSSD.setCellValueFactory(new PropertyValueFactory<>("SSD"));
-        colCompHDD.setCellValueFactory(new PropertyValueFactory<>("HDD"));
-        colCompProcessor.setCellValueFactory(new PropertyValueFactory<>("processor"));
-        colCompPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-        compTableView.setItems(compData);
-        
+        showCompFunc("Exec comps apple");
         System.out.println("Apple bilgisayarlar gösterildi");
     }
 
     @FXML
     void compDell(ActionEvent event) throws SQLException {
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rs4 = connection.createStatement().executeQuery("Exec comps dell");
-        while(rs4.next()){
-            compData.add(new comp(rs4.getString("model"),rs4.getInt("SSD"),rs4.getInt("HDD"),rs4.getString("processor"),rs4.getInt("price")));
-        }
-        colCompModel.setCellValueFactory(new PropertyValueFactory<>("model"));
-        colCompSSD.setCellValueFactory(new PropertyValueFactory<>("SSD"));
-        colCompHDD.setCellValueFactory(new PropertyValueFactory<>("HDD"));
-        colCompProcessor.setCellValueFactory(new PropertyValueFactory<>("processor"));
-        colCompPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-        compTableView.setItems(compData);
-        
+        showCompFunc("Exec comps dell");
         System.out.println("Dell bilgisayarlar gösterildi");
     }
 
@@ -111,26 +77,29 @@ public class CompFXMLController implements Initializable {
 
     @FXML
     void compBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        compBackBtn.getScene().getWindow().hide();
+        gf.openStageFunc("menuFXML.fxml", compBackBtn);
     }
 
     @FXML
     void compLogOut(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        compLogoutBtn.getScene().getWindow().hide();
+        gf.openStageFunc("loginFXML.fxml", compLogoutBtn);
     }
     @FXML
-    void compBuy(ActionEvent event) {
-
+    void compBuy(ActionEvent event) throws IOException {
+        gf.openStageFunc("creditCardFXML.fxml", compBuyBtn);
+    }
+    public void showCompFunc(String query) throws SQLException{
+        connection = DriverManager.getConnection(conStr,"sa","123456789");
+        ResultSet rs3 = connection.createStatement().executeQuery(query);
+        while(rs3.next()){
+            compData.add(new comp(rs3.getString("model"),rs3.getInt("SSD"),rs3.getInt("HDD"),rs3.getString("processor"),rs3.getInt("price")));
+        }
+        colCompModel.setCellValueFactory(new PropertyValueFactory<>("model"));
+        colCompSSD.setCellValueFactory(new PropertyValueFactory<>("SSD"));
+        colCompHDD.setCellValueFactory(new PropertyValueFactory<>("HDD"));
+        colCompProcessor.setCellValueFactory(new PropertyValueFactory<>("processor"));
+        colCompPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        compTableView.setItems(compData);
     }
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

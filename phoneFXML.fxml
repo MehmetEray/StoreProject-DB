@@ -10,7 +10,7 @@
 <AnchorPane id="AnchorPane" prefHeight="556.0" prefWidth="802.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.PhoneFXMLController">
    <children>
       <Button fx:id="phoneexit" layoutX="525.0" layoutY="23.0" mnemonicParsing="false" onAction="#phoneExit" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
-      <TableView fx:id="phoneTableView" layoutX="87.0" layoutY="67.0" onMouseClicked="#phoneTableviewSelect" prefHeight="281.0" prefWidth="501.0">
+      <TableView fx:id="phoneTableView" layoutX="87.0" layoutY="67.0" prefHeight="281.0" prefWidth="501.0">
          <columns>
             <TableColumn fx:id="colPhoneModel" prefWidth="174.0" text="model" />
             <TableColumn fx:id="colPhoneRam" prefWidth="76.0" text="ram" />
@@ -26,9 +26,8 @@
             <Button fx:id="phoneHuaweiBtn" mnemonicParsing="false" onAction="#phoneHuaweiShow" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="HUAWEİ" />
          </children>
       </VBox>
-      <Button fx:id="logoutphone" layoutX="495.0" layoutY="431.0" mnemonicParsing="false" onAction="#logoutPhone" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #e45652;" text="Log Out" />
-      <Button fx:id="backBtn" layoutX="48.0" layoutY="440.0" mnemonicParsing="false" onAction="#phoneBack" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="back" />
-      <Button fx:id="phoneBuyBtn" layoutX="486.0" layoutY="381.0" mnemonicParsing="false" onAction="#phoneBuy" prefHeight="39.0" prefWidth="100.0" text="Buy" />
-      <Label fx:id="phonelbl" layoutX="129.0" layoutY="412.0" prefHeight="69.0" prefWidth="370.0" text="............" textFill="WHITE" />
+      <Button fx:id="logoutphone" layoutX="505.0" layoutY="383.0" mnemonicParsing="false" onAction="#logoutPhone" prefHeight="31.0" prefWidth="83.0" style="-fx-background-color: #e45652;" text="Log Out" />
+      <Button fx:id="backBtn" layoutX="96.0" layoutY="383.0" mnemonicParsing="false" onAction="#phoneBack" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="back" />
+      <Button fx:id="phoneBuyBtn" layoutX="371.0" layoutY="379.0" mnemonicParsing="false" onAction="#phoneBuy" prefHeight="39.0" prefWidth="100.0" text="Buy" />
    </children>
 </AnchorPane>

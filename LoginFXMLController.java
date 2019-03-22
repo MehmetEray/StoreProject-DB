@@ -8,6 +8,7 @@ package javafxapplication2;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.DriverManager;
+import java.sql.ParameterMetaData;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -47,50 +48,47 @@ public class LoginFXMLController implements Initializable {
     @FXML private Button signInBtn;
     PreparedStatement pst =null;
     ResultSet rs;
+    generalFunc gf = new generalFunc();
     @FXML
     void signIn(ActionEvent event) throws IOException, SQLException { 
-        String sql = "select * from login where username = ? and password = ?";
+        
+        /*String sql = "select * from login where username = ? password = ? type = ?";
         connection = DriverManager.getConnection(conStr,"sa","123456789");
         pst = connection.prepareStatement(sql);
         pst.setString(1,usernametxtfield.getText());
         pst.setString(2,passwordtxtfield.getText());
+        pst.setString(3,"user");
         ResultSet rs = pst.executeQuery();
-            if(rs.next()){
-            Stage stage=new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("adminPanelFXML.fxml"));
-            stage.setScene(new Scene(root,800,800));
-            stage.initStyle(StageStyle.TRANSPARENT);
-            stage.show();
-            System.out.println("Matched");
-            signInBtn.getScene().getWindow().hide();
-            
-        }else{
-            Stage stage=new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
-            stage.setScene(new Scene(root,800,850));
-            stage.initStyle(StageStyle.TRANSPARENT);
-            stage.show();
-            System.out.println("Didn't matched");
-            signInBtn.getScene().getWindow().hide();
-        }
-        
-    }
-        
-        //loginpane.setVisible(Boolean.FALSE);
-        //btn_login.getScene().getWindow().hide();
-       
-       @FXML
-    void forgot(ActionEvent event) {
+        if (!rs.next()) {
+                System.err.println("Wrong Logins --///");
 
+            } else {
+                System.out.println("Successfull Login");
+            }
+            */
+            //gf.openStageFunc("adminPanelFXML.fxml", signInBtn);
+              //  System.out.println("Matched");
+             gf.openStageFunc("menuFXML.fxml", signInBtn);
+            System.out.println("Didn't matched");
     }
-        @FXML
+       
+    @FXML
+    void forgot(ActionEvent event) {}
+    @FXML
     void exitLogin(ActionEvent event) {
             Platform.exit();
+            System.out.println("EXIT");
     }
     
     @FXML
     void signUp(ActionEvent event) throws SQLException {
-         loginClass.insert(usernameInsert.getText(),passwordInsert.getText());
+        connection = DriverManager.getConnection(conStr,"sa","123456789");
+        String query = "insert into login values(?,?,?)";
+        PreparedStatement pst = connection.prepareStatement(query);
+        pst.setString(1,usernameInsert.getText());
+        pst.setString(2,passwordInsert.getText());
+        pst.setString(3,"user");
+        JOptionPane.showMessageDialog(null, "You have registered!");
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

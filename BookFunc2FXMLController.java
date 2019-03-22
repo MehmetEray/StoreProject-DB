@@ -33,14 +33,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import static javafxapplication2.BookFXMLController.connection;
 import static javafxapplication2.BookFuncFXMLController.connection;
 import javax.swing.JOptionPane;
 
-/**
- * FXML Controller class
- *
- * @author mehmet eray
- */
 public class BookFunc2FXMLController implements Initializable {
 
     private static final String conStr = "jdbc:sqlserver://localhost:1433;databaseName=project;tablename=phoneTable;integratedSecurity = true";
@@ -53,12 +49,14 @@ public class BookFunc2FXMLController implements Initializable {
     @FXML private TableView<book> adminDeleteBookTable;
     @FXML private TableColumn<?, ?> colPriceDelete;
     @FXML private TextField deleteBooktxtfield;
-        @FXML
-    private Button adminExitBtn;
-        @FXML
-    private Button adminBackBtn;
-    static ObservableList<book> bookData = FXCollections.observableArrayList();
+    @FXML private Button adminExitBtn;
+    @FXML private Button adminBackBtn;
+    @FXML private Button adminUpdateBookBtn;
+    @FXML
+    private TextField adminPricetf;
     
+    static ObservableList<book> bookData = FXCollections.observableArrayList();
+    generalFunc gf = new generalFunc();
     @FXML
     void bookDelete(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -94,19 +92,24 @@ public class BookFunc2FXMLController implements Initializable {
     }
      @FXML
     void adminBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("adminPanelFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        adminBackBtn.getScene().getWindow().hide();
+        gf.openStageFunc("adminPanelFXML.fxml", adminBackBtn);
     }
 
     @FXML
     void adminExit(ActionEvent event) {
         Platform.exit();
     }
-    
-
-    
+     @FXML
+    void adminUpdateBook(ActionEvent event) throws SQLException {
+        connection = DriverManager.getConnection(conStr,"sa","123456789");
+        String query = "update bookTable set price = ? where bookName = ?";
+        PreparedStatement pst = connection.prepareStatement(query);
+        pst.setString(1, adminPricetf.getText());
+        pst.setString(2, deleteBooktxtfield.getText());
+        pst.executeUpdate();
+        System.out.println("Updated");
+        JOptionPane.showMessageDialog(null,"Success");
+        deleteBooktxtfield.clear();
+        adminPricetf.clear();
+    }
 }

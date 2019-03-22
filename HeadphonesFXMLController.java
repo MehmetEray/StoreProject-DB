@@ -48,55 +48,23 @@ public class HeadphonesFXMLController implements Initializable {
     @FXML private TableColumn<headphone, String> colHeadphoneModel;
     @FXML private TableColumn<headphone, String> colHeadphoneBrand;
     @FXML private TableColumn<headphone, Integer> colHeadphonePrice;
-     @FXML
-    private Button headphoneBuyBtn;
-   
-
+    @FXML private Button headphoneBuyBtn;
+    generalFunc gf = new generalFunc();
     @FXML
     void phılıpsHeadShow(ActionEvent event) throws SQLException {
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rs = connection.createStatement().executeQuery("Exec headphones philips");
-        while(rs.next()){
-            headphoneData.add(new headphone(rs.getString("brand"),rs.getString("model"),rs.getInt("price")));
-        }
-        colHeadphoneBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        colHeadphoneModel.setCellValueFactory(new PropertyValueFactory<>("model"));
-        colHeadphonePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-        
-        headphoneTableView.setItems(headphoneData);
-        
+        showHeadphoneFunc("Exec headphones philips");
         System.out.println("Philips kulaklıklar gösterildi");
     }
 
     @FXML
     void appleHeadShow(ActionEvent event) throws SQLException {
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rs = connection.createStatement().executeQuery("Exec headphones apple");
-        while(rs.next()){
-            headphoneData.add(new headphone(rs.getString("brand"),rs.getString("model"),rs.getInt("price")));
-        }
-        colHeadphoneBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        colHeadphoneModel.setCellValueFactory(new PropertyValueFactory<>("model"));
-        colHeadphonePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-        
-        headphoneTableView.setItems(headphoneData);
-        //database de kayıtlı ürün yok
+        showHeadphoneFunc("Exec headphones apple");
         System.out.println("Apple kulaklıklar gösterildi");
     }
 
     @FXML
     void huaweiHeadShow(ActionEvent event) throws SQLException {
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rs = connection.createStatement().executeQuery("Exec headphones huawei");
-        while(rs.next()){
-            headphoneData.add(new headphone(rs.getString("brand"),rs.getString("model"),rs.getInt("price")));
-        }
-        colHeadphoneBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        colHeadphoneModel.setCellValueFactory(new PropertyValueFactory<>("model"));
-        colHeadphonePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-        
-        headphoneTableView.setItems(headphoneData);
-        //database de kayıtlı ürün yok
+        showHeadphoneFunc("Exec headphones huawei");
         System.out.println("Huawei kulaklıklar gösterildi");
     }
 
@@ -106,24 +74,28 @@ public class HeadphonesFXMLController implements Initializable {
     }
     @FXML
     void eadPhoneBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
+        gf.openStageFunc("menuFXML.fxml", headPhoneBackBtn);
     }
 
     @FXML
     void headPhoneLogOut(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
+        gf.openStageFunc("loginFXML.fxml", headphoneLogOutBtn);
     }
     @FXML
-    void headphoneBuy(ActionEvent event) {
-
+    void headphoneBuy(ActionEvent event) throws IOException {
+        gf.openStageFunc("creditCardFXML.fxml", headphoneBuyBtn); 
+        
+    }
+    public void showHeadphoneFunc(String query) throws SQLException{
+        connection = DriverManager.getConnection(conStr,"sa","123456789");
+        ResultSet rs = connection.createStatement().executeQuery(query);
+        while(rs.next()){
+            headphoneData.add(new headphone(rs.getString("brand"),rs.getString("model"),rs.getInt("price")));
+        }
+        colHeadphoneBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
+        colHeadphoneModel.setCellValueFactory(new PropertyValueFactory<>("model"));
+        colHeadphonePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
+        headphoneTableView.setItems(headphoneData);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {

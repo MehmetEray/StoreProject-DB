@@ -27,66 +27,38 @@ import javafx.stage.StageStyle;
  */
 public class MenuFXMLController implements Initializable {
 
-   
-    @FXML
-    private Button headBtn;
-
-    @FXML
-    private Button compBtn;
-
-    @FXML
-    private Button booksBtn;
-
-    @FXML
-    private Button phonesBtn;
-    @FXML
-    private Button phoneexit;
+    @FXML private Button compBtn;
+    @FXML private Button headBtn;
+    @FXML private Button booksBtn;
+    @FXML private Button phonesBtn;
+    @FXML private Button phoneexit;
+    generalFunc gf = new generalFunc();
     @FXML
     void headShow(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("headphonesFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        headBtn.getScene().getWindow().hide();
+        gf.openStageFunc("headphonesFXML.fxml", headBtn);
+        System.out.println("Kulaklıklara giriş yapıldı");
     }
 
     @FXML
     void compShow(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("compFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        compBtn.getScene().getWindow().hide();
+        gf.openStageFunc("compFXML.fxml",compBtn);
+        System.out.println("Bilgisayarlara giriş yapıldı");
     }
 
     @FXML
     void phonesShow(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("phoneFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
+        gf.openStageFunc("phoneFXML.fxml",phonesBtn);
         System.out.println("Telefonlara giriş yapıldı");
-        phonesBtn.getScene().getWindow().hide();
-    }
-      @FXML
-    void booksShow(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("bookFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
-        booksBtn.getScene().getWindow().hide();
     }
     @FXML
-    void phoneExit(ActionEvent event) {
-        Platform.exit();
+    void booksShow(ActionEvent event) throws IOException {
+        gf.openStageFunc("bookFXML.fxml",booksBtn);
+        System.out.println("Kitaplara giriş yapıldı");
     }
+    @FXML
+    void phoneExit(ActionEvent event) { Platform.exit(); }
+    
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    public void initialize(URL url, ResourceBundle rb) { }    
     
 }

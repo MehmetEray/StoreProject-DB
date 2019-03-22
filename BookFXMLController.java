@@ -42,14 +42,13 @@ public class BookFXMLController implements Initializable {
     @FXML private Button bookBackBtn;
     @FXML private Button bookLogOutBtn;
     @FXML private Button bookBuyBtn;
-   
-   
     @FXML private TableView<book> bookTableview;
     @FXML private TableColumn<book, String> colBookType;
     @FXML private TableColumn<book, String> colBookName;    
     @FXML private TableColumn<book, String> colBookAuthor;
     @FXML private TableColumn<book, String> colBookPrice;
     static ObservableList<book> bookData = FXCollections.observableArrayList();
+    generalFunc gf = new generalFunc();
     @FXML
     void showbook(ActionEvent event) throws IOException, SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -62,7 +61,6 @@ public class BookFXMLController implements Initializable {
         colBookType.setCellValueFactory(new PropertyValueFactory<>("type"));
         colBookPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         bookTableview.setItems(bookData);
-        
         System.out.println("Kitaplar gösterildi");
     }
       @FXML
@@ -71,24 +69,16 @@ public class BookFXMLController implements Initializable {
     }
     @FXML
     void bookBack(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("menuFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
+        gf.openStageFunc("menuFXML.fxml", bookBackBtn);
     }
 
     @FXML
     void bookLogOut(ActionEvent event) throws IOException {
-        Stage stage=new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("loginFXML.fxml"));
-        stage.setScene(new Scene(root,600,500));
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.show();
+        gf.openStageFunc("loginFXML.fxml", bookLogOutBtn);
     }
     @FXML
-    void bookBuy(ActionEvent event) {
-
+    void bookBuy(ActionEvent event) throws IOException {
+        gf.openStageFunc("creditCardFXML.fxml", bookBuyBtn);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) {
