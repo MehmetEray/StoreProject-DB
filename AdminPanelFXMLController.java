@@ -36,6 +36,8 @@ public class AdminPanelFXMLController implements Initializable {
     @FXML private Button adminDeletePhoneBtn;
     @FXML private Button adminInsertBookBtn;
     @FXML private Button adminLogOut;
+    @FXML
+    private Button adminProductsBtn;
     generalFunc gf = new generalFunc();
 @FXML
     void adminInsertBook(ActionEvent event) throws IOException {
@@ -79,9 +81,13 @@ public class AdminPanelFXMLController implements Initializable {
     void adminLogOut(ActionEvent event) throws IOException {
         gf.openStageFunc("loginFXML.fxml", adminLogOut);
     }
-     @FXML
+    @FXML
     void adminExit(ActionEvent event) {
         Platform.exit();
+    }
+    @FXML
+    void adminProduct(ActionEvent event) throws IOException {
+        gf.openStageFunc("allProductsFXML.fxml", adminProductsBtn);
     }
 
     @FXML

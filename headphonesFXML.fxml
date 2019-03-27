@@ -6,25 +6,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.HeadphonesFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="501.0" prefWidth="727.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication2.HeadphonesFXMLController">
    <children>
-      <VBox layoutY="97.0" prefHeight="200.0" prefWidth="100.0">
+      <VBox layoutX="36.0" layoutY="53.0" prefHeight="200.0" prefWidth="100.0">
          <children>
             <Button fx:id="phılıpsHeadBtn" mnemonicParsing="false" onAction="#phılıpsHeadShow" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="PHILIPS" />
             <Button fx:id="appleHeadBtn" mnemonicParsing="false" onAction="#appleHeadShow" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="APPLE" />
             <Button fx:id="huaweiHeadBtn" mnemonicParsing="false" onAction="#huaweiHeadShow" prefHeight="31.0" prefWidth="106.0" style="-fx-background-color: #e45652;" text="HUAWEİ" />
          </children>
       </VBox>
-      <TableView fx:id="headphoneTableView" layoutX="115.0" layoutY="53.0" prefHeight="276.0" prefWidth="471.0">
+      <TableView fx:id="headphoneTableView" layoutX="144.0" layoutY="53.0" prefHeight="276.0" prefWidth="471.0">
          <columns>
             <TableColumn fx:id="colHeadphoneBrand" prefWidth="238.0" text="brand" />
             <TableColumn fx:id="colHeadphoneModel" prefWidth="113.0" text="model" />
             <TableColumn fx:id="colHeadphonePrice" prefWidth="113.0" text="price" />
          </columns>
       </TableView>
-      <Button fx:id="exitHead" layoutX="542.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitHead" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
-      <Button fx:id="headPhoneBackBtn" layoutX="57.0" layoutY="344.0" mnemonicParsing="false" onAction="#eadPhoneBack" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="back" />
-      <Button fx:id="headphoneLogOutBtn" layoutX="496.0" layoutY="344.0" mnemonicParsing="false" onAction="#headPhoneLogOut" prefHeight="31.0" prefWidth="79.0" style="-fx-background-color: #e45652;" text="Log Out" />
-      <Button fx:id="headphoneBuyBtn" layoutX="370.0" layoutY="344.0" mnemonicParsing="false" onAction="#headphoneBuy" prefHeight="31.0" prefWidth="79.0" text="Buy" />
+      <Button fx:id="exitHead" layoutX="571.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitHead" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
+      <Button fx:id="headPhoneBackBtn" layoutX="86.0" layoutY="344.0" mnemonicParsing="false" onAction="#eadPhoneBack" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="back" />
+      <Button fx:id="headphoneLogOutBtn" layoutX="554.0" layoutY="393.0" mnemonicParsing="false" onAction="#headPhoneLogOut" prefHeight="31.0" prefWidth="79.0" style="-fx-background-color: #e45652;" text="Log Out" />
+      <Button fx:id="headphoneBuyBtn" layoutX="554.0" layoutY="354.0" mnemonicParsing="false" onAction="#headphoneBuy" prefHeight="31.0" prefWidth="79.0" text="Buy" />
+      <Button fx:id="headpSaveOrderBtn" layoutX="468.0" layoutY="341.0" mnemonicParsing="false" onAction="#headpSaveOrder" prefHeight="25.0" prefWidth="77.0" text="Save order" />
+      <TextArea fx:id="headpTextArea" layoutX="165.0" layoutY="370.0" prefHeight="76.0" prefWidth="380.0" />
+      <Label fx:id="headpLabelName" layoutX="165.0" layoutY="345.0" text="Please write model name" textFill="#f8f8f8" />
+      <TextField fx:id="headpOrdertf" layoutX="313.0" layoutY="341.0" />
    </children>
 </AnchorPane>

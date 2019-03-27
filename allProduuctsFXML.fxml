@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication2.AllProduuctsFXMLController">
+   <children>
+      <TableView fx:id="productsTableView" layoutX="31.0" layoutY="25.0" prefHeight="225.0" prefWidth="549.0">
+        <columns>
+          <TableColumn fx:id="colProductsNames" prefWidth="411.0" text="Products" />
+          <TableColumn fx:id="colProductsPrices" prefWidth="133.0" text="price" />
+        </columns>
+      </TableView>
+      <Button fx:id="productsBackBtn" layoutX="31.0" layoutY="302.0" mnemonicParsing="false" onAction="#productsBack" prefHeight="29.0" prefWidth="72.0" text="Back" />
+      <Button fx:id="productsExitBtn" layoutX="508.0" layoutY="302.0" mnemonicParsing="false" onAction="#productsExit" prefHeight="29.0" prefWidth="72.0" text="Exit" />
+      <Button fx:id="showProductsBtn" layoutX="31.0" layoutY="250.0" mnemonicParsing="false" onAction="#showProducts" prefHeight="25.0" prefWidth="122.0" text="Show Products" />
+   </children>
+</AnchorPane>

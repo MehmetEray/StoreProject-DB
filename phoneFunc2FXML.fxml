@@ -19,10 +19,10 @@
       </TableView>
       <TextField fx:id="phoneModeltxtfield" layoutX="189.0" layoutY="271.0" />
       <Label layoutX="79.0" layoutY="276.0" text="Phone Model" textFill="#f8f6f6" />
-      <Button fx:id="phoneDeleteBtn" layoutX="212.0" layoutY="310.0" mnemonicParsing="false" onAction="#phoneDelete" prefHeight="25.0" prefWidth="71.0" text="Delete" />
+      <Button fx:id="phoneDeleteBtn" layoutX="189.0" layoutY="348.0" mnemonicParsing="false" onAction="#phoneDelete" prefHeight="25.0" prefWidth="71.0" text="Delete" />
       <Button fx:id="adminBackBtn" layoutX="48.0" layoutY="341.0" mnemonicParsing="false" onAction="#adminBack" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #e45652;" text="Back" />
       <Button fx:id="adminExitBtn" layoutX="481.0" layoutY="341.0" mnemonicParsing="false" onAction="#adminExit" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #e45652;" text="Exit" />
-      <Button fx:id="adminUpdateBtn" layoutX="324.0" layoutY="310.0" mnemonicParsing="false" onAction="#updatePhonePrice" prefHeight="25.0" prefWidth="83.0" text="Update" />
-      <TextField fx:id="adminPricetf" layoutX="382.0" layoutY="271.0" prefHeight="25.0" prefWidth="63.0" />
+      <Button fx:id="adminUpdateBtn" layoutX="283.0" layoutY="348.0" mnemonicParsing="false" onAction="#updatePhonePrice" prefHeight="25.0" prefWidth="83.0" text="Update" />
+      <TextField fx:id="adminPricetf" layoutX="189.0" layoutY="310.0" prefHeight="25.0" prefWidth="63.0" />
    </children>
 </AnchorPane>

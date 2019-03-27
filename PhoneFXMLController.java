@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -27,11 +28,15 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import static javafxapplication2.ComFunc2FXMLController.connection;
 import static javafxapplication2.PhoneFXMLController.phoneData;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -56,8 +61,18 @@ public class PhoneFXMLController implements Initializable {
     @FXML private Button phoneBuyBtn; 
     private Label labelPhonelbl;
     @FXML private Label phonelbl;
+    @FXML
+    private Button phoneSaveOrderBtn;
+    @FXML
+    private TextArea phoneTextArea;
+    @FXML
+    private TextField phoneOrdertf;
     static ObservableList<phone> phoneData = FXCollections.observableArrayList();
     generalFunc gf = new generalFunc();
+    @FXML
+    void phoneSaveOrder(ActionEvent event) throws SQLException {
+        phoneTextArea.setText("Siparişiniz alınmıştır");
+    }
     @FXML 
     void phoneExit(ActionEvent event) { Platform.exit(); }
     

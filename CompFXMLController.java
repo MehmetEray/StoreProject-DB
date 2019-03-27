@@ -22,18 +22,17 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import static javafxapplication2.PhoneFXMLController.connection;
 
-/**
- * FXML Controller class
- *
- * @author mehmet eray
- */
 public class CompFXMLController implements Initializable {
     private static final String conStr = "jdbc:sqlserver://localhost:1433;databaseName=project;tablename=phoneTable;integratedSecurity = true";
     static Connection connection;
@@ -51,13 +50,21 @@ public class CompFXMLController implements Initializable {
     @FXML private TableColumn<comp, Integer> colCompHDD;
     @FXML private TableColumn<comp, Integer> colCompPrice;
     @FXML private TableView<comp> compTableView;
+    @FXML private TextField compOrdertf;
+    @FXML private Button compSaveOrderBtn;
+    @FXML private TextArea compTextArea;
+    @FXML private Label compLabelName;
+   
     generalFunc gf = new generalFunc();
     @FXML
     void compLenovo(ActionEvent event) throws SQLException {
         showCompFunc("Exec comps lenovo");
         System.out.println("Lenovo bilgisayarlar gösterildi");
     }
-
+    @FXML
+    void compSaveOrder(ActionEvent event) {
+        compTextArea.setText("Siparişiniz alınmıştır");
+    }
     @FXML
     void compApple(ActionEvent event) throws SQLException {
         showCompFunc("Exec comps apple");
@@ -86,6 +93,7 @@ public class CompFXMLController implements Initializable {
     }
     @FXML
     void compBuy(ActionEvent event) throws IOException {
+        
         gf.openStageFunc("creditCardFXML.fxml", compBuyBtn);
     }
     public void showCompFunc(String query) throws SQLException{
@@ -101,8 +109,7 @@ public class CompFXMLController implements Initializable {
         colCompPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         compTableView.setItems(compData);
     }
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+    public void initialize(URL url, ResourceBundle rb) { }    
+
+
 }

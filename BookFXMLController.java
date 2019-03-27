@@ -22,8 +22,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -48,7 +51,20 @@ public class BookFXMLController implements Initializable {
     @FXML private TableColumn<book, String> colBookAuthor;
     @FXML private TableColumn<book, String> colBookPrice;
     static ObservableList<book> bookData = FXCollections.observableArrayList();
+    @FXML private TextField bookOrdertf;
+    @FXML private Label bookLabelName;
+    @FXML private Button bookSaveOrderBtn;
+    @FXML private TextArea bookTextArea;
+         
     generalFunc gf = new generalFunc();
+    @FXML
+    void bookSaveOrder(ActionEvent event) {
+        if(bookOrdertf.getText() == null && bookOrdertf.getText() == ""){
+            bookTextArea.setText("Lütfen sipariş için model ismi giriniz");
+        }else{
+            bookTextArea.setText("Siparişiniz alınmıştır");
+        }
+    }
     @FXML
     void showbook(ActionEvent event) throws IOException, SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -63,7 +79,7 @@ public class BookFXMLController implements Initializable {
         bookTableview.setItems(bookData);
         System.out.println("Kitaplar gösterildi");
     }
-      @FXML
+    @FXML
     void exitBook(ActionEvent event) {
         Platform.exit();
     }
@@ -81,8 +97,6 @@ public class BookFXMLController implements Initializable {
         gf.openStageFunc("creditCardFXML.fxml", bookBuyBtn);
     }
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    public void initialize(URL url, ResourceBundle rb) {}    
     
 }

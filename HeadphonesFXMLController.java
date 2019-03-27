@@ -22,8 +22,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -49,7 +52,16 @@ public class HeadphonesFXMLController implements Initializable {
     @FXML private TableColumn<headphone, String> colHeadphoneBrand;
     @FXML private TableColumn<headphone, Integer> colHeadphonePrice;
     @FXML private Button headphoneBuyBtn;
+    @FXML private Label headpLabelName;
+    @FXML private TextField headpOrdertf;
+    @FXML private TextArea headpTextArea;
+    @FXML private Button headpSaveOrderBtn;
+    
     generalFunc gf = new generalFunc();
+    @FXML
+    void headpSaveOrder(ActionEvent event) {
+        headpTextArea.setText("Siparişiniz alınmıştır");
+    }
     @FXML
     void phılıpsHeadShow(ActionEvent event) throws SQLException {
         showHeadphoneFunc("Exec headphones philips");

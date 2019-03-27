@@ -12,12 +12,23 @@
    <children>
       <AnchorPane layoutX="283.0" layoutY="-72.0" prefHeight="482.0" prefWidth="302.0" style="-fx-background-color: #9C2827;">
          <children>
-            <TextField fx:id="usernametxtfield" layoutX="56.0" layoutY="181.0" prefHeight="25.0" prefWidth="190.0" promptText="username" />
-            <PasswordField fx:id="passwordtxtfield" layoutX="56.0" layoutY="238.0" prefHeight="25.0" prefWidth="190.0" promptText="password" />
             <Button fx:id="signInBtn" layoutX="102.0" layoutY="300.0" mnemonicParsing="false" onAction="#signIn" prefHeight="25.0" prefWidth="98.0" style="-fx-background-color: #e45652;" text="SIGN IN" />
-            <Label layoutX="130.0" layoutY="137.0" text="SIGN IN" textFill="#3fd3ce" />
+            <Label layoutX="119.0" layoutY="132.0" text="SIGN IN" textFill="#eff2f1">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
             <Hyperlink fx:id="forgotPassword" layoutX="100.0" layoutY="360.0" onAction="#forgot" text="Forgot Password?" textFill="#ebdfdf" />
             <Button fx:id="exitLoginBtn" layoutX="238.0" layoutY="447.0" mnemonicParsing="false" onAction="#exitLogin" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
+            <HBox layoutX="56.0" layoutY="197.0" prefHeight="27.0" prefWidth="190.0" style="-fx-background-color: #9C2827; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+               <children>
+                  <TextField fx:id="usernametxtfield" prefHeight="25.0" prefWidth="190.0" promptText="username" style="-fx-background-color: #9C2827;" />
+               </children>
+            </HBox>
+            <HBox layoutX="56.0" layoutY="241.0" prefHeight="23.0" prefWidth="190.0" style="-fx-background-color: #9C2827; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #a2a2a2;">
+               <children>
+                  <PasswordField fx:id="passwordtxtfield" prefHeight="25.0" prefWidth="190.0" promptText="password" style="-fx-background-color: #9C2827;" />
+               </children>
+            </HBox>
          </children>
       </AnchorPane>
       <ImageView fitHeight="343.0" fitWidth="244.0" layoutX="39.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
@@ -27,7 +38,15 @@
          </font>
       </Label>
       <Button fx:id="signUpBtn" layoutX="50.0" layoutY="211.0" mnemonicParsing="false" onAction="#signUp" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #e45652;" text="SIGN UP" />
-      <TextField fx:id="usernameInsert" layoutX="50.0" layoutY="124.0" promptText="username" />
-      <PasswordField fx:id="passwordInsert" layoutX="50.0" layoutY="169.0" promptText="password" />
+      <HBox layoutX="50.0" layoutY="136.0" prefHeight="27.0" prefWidth="149.0" style="-fx-background-color: #20120F; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #a2a2a2; -fx-highlight-text-fill: white;">
+         <children>
+            <TextField fx:id="usernameInsert" prefHeight="25.0" prefWidth="149.0" promptText="username" style="-fx-background-color: #20120F; -fx-border-width: 0px 0px 2px 0px;" />
+         </children>
+      </HBox>
+      <HBox layoutX="50.0" layoutY="169.0" prefHeight="27.0" prefWidth="149.0" style="-fx-background-color: #20120F; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
+         <children>
+            <PasswordField fx:id="passwordInsert" prefHeight="25.0" prefWidth="156.0" promptText="password" style="-fx-background-color: #20120F; -fx-border-width: 0px 0px 2px 0px;" />
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

@@ -16,12 +16,12 @@
             <TableColumn fx:id="colPriceDelete" prefWidth="91.0" text="price" />
         </columns>
       </TableView>
-      <Button fx:id="deletebookBtn" layoutX="212.0" layoutY="313.0" mnemonicParsing="false" onAction="#bookDelete" prefHeight="25.0" prefWidth="86.0" text="Delete" />
+      <Button fx:id="deletebookBtn" layoutX="212.0" layoutY="352.0" mnemonicParsing="false" onAction="#bookDelete" prefHeight="25.0" prefWidth="86.0" text="Delete" />
       <TextField fx:id="deleteBooktxtfield" layoutX="212.0" layoutY="268.0" />
       <Label layoutX="134.0" layoutY="272.0" text="Book name" textFill="#f8f6f6" />
       <Button fx:id="adminBackBtn" layoutX="36.0" layoutY="352.0" mnemonicParsing="false" onAction="#adminBack" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #e45652;" text="Back" />
       <Button fx:id="adminExitBtn" layoutX="504.0" layoutY="352.0" mnemonicParsing="false" onAction="#adminExit" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #e45652;" text="Exit" />
-      <Button fx:id="adminUpdateBookBtn" layoutX="371.0" layoutY="313.0" mnemonicParsing="false" onAction="#adminUpdateBook" prefHeight="25.0" prefWidth="105.0" text="Update Price" />
-      <TextField fx:id="adminPricetf" layoutX="393.0" layoutY="268.0" prefHeight="25.0" prefWidth="60.0" />
+      <Button fx:id="adminUpdateBookBtn" layoutX="310.0" layoutY="352.0" mnemonicParsing="false" onAction="#adminUpdateBook" prefHeight="25.0" prefWidth="105.0" text="Update Price" />
+      <TextField fx:id="adminPricetf" layoutX="212.0" layoutY="308.0" prefHeight="25.0" prefWidth="60.0" />
    </children>
 </AnchorPane>

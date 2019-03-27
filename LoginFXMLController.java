@@ -49,28 +49,40 @@ public class LoginFXMLController implements Initializable {
     PreparedStatement pst =null;
     ResultSet rs;
     generalFunc gf = new generalFunc();
+    String type1 = "user";
+    String type2 = "admin";
+            
     @FXML
-    void signIn(ActionEvent event) throws IOException, SQLException { 
-        
-        /*String sql = "select * from login where username = ? password = ? type = ?";
+    public void signIn(ActionEvent event) throws IOException, SQLException { 
+        /*String username = usernametxtfield.getText();
+        String password = passwordtxtfield.getText();
+        String type ="user";
+        String sql = "select * from login where username = username password = password type = type";
         connection = DriverManager.getConnection(conStr,"sa","123456789");
         pst = connection.prepareStatement(sql);
         pst.setString(1,usernametxtfield.getText());
         pst.setString(2,passwordtxtfield.getText());
-        pst.setString(3,"user");
+        pst.setString(3,type);
         ResultSet rs = pst.executeQuery();
-        if (!rs.next()) {
-                System.err.println("Wrong Logins --///");
-
-            } else {
+        if (rs.next()) {
                 System.out.println("Successfull Login");
+                gf.openStageFunc("adminPanelFXML.fxml", signInBtn);
+            } else {
+                gf.openStageFunc("menuFXML.fxml", signInBtn);
+                System.err.println("Wrong Login");
             }
-            */
-            //gf.openStageFunc("adminPanelFXML.fxml", signInBtn);
+         */   
+           gf.openStageFunc("adminPanelFXML.fxml", signInBtn);
               //  System.out.println("Matched");
-             gf.openStageFunc("menuFXML.fxml", signInBtn);
-            System.out.println("Didn't matched");
+             //gf.openStageFunc("menuFXML.fxml", signInBtn);
+            //System.out.println("Didn't matched");
+        //gf.loginUser(usernametxtfield.getText(),passwordtxtfield.getText());
+        //gf.loginAdmin(usernametxtfield.getText(),passwordtxtfield.getText());
     }
+    
+    
+    
+
        
     @FXML
     void forgot(ActionEvent event) {}
@@ -79,7 +91,6 @@ public class LoginFXMLController implements Initializable {
             Platform.exit();
             System.out.println("EXIT");
     }
-    
     @FXML
     void signUp(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
@@ -91,8 +102,6 @@ public class LoginFXMLController implements Initializable {
         JOptionPane.showMessageDialog(null, "You have registered!");
     }
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    public void initialize(URL url, ResourceBundle rb) { }    
     
 }
