@@ -46,38 +46,41 @@ public class LoginFXMLController implements Initializable {
     @FXML private Button exitLoginBtn;
     @FXML private TextField usernametxtfield;
     @FXML private Button signInBtn;
-    PreparedStatement pst =null;
+    PreparedStatement pst;
+    PreparedStatement pstAdmin;
     ResultSet rs;
+    ResultSet rsAdmin;
     generalFunc gf = new generalFunc();
-    String type1 = "user";
-    String type2 = "admin";
+    String typeUser = "user";
+    String typeAdmin = "admin";
             
     @FXML
     public void signIn(ActionEvent event) throws IOException, SQLException { 
-        /*String username = usernametxtfield.getText();
+        String username = usernametxtfield.getText();
         String password = passwordtxtfield.getText();
-        String type ="user";
-        String sql = "select * from login where username = username password = password type = type";
+        String sql = "select * from login where username = ? and password = ? and type = ? ";
         connection = DriverManager.getConnection(conStr,"sa","123456789");
         pst = connection.prepareStatement(sql);
         pst.setString(1,usernametxtfield.getText());
         pst.setString(2,passwordtxtfield.getText());
-        pst.setString(3,type);
-        ResultSet rs = pst.executeQuery();
+        pst.setString(3,typeUser);
+        rs = pst.executeQuery();
         if (rs.next()) {
-                System.out.println("Successfull Login");
-                gf.openStageFunc("adminPanelFXML.fxml", signInBtn);
-            } else {
-                gf.openStageFunc("menuFXML.fxml", signInBtn);
-                System.err.println("Wrong Login");
-            }
-         */   
-           gf.openStageFunc("adminPanelFXML.fxml", signInBtn);
-              //  System.out.println("Matched");
-             //gf.openStageFunc("menuFXML.fxml", signInBtn);
-            //System.out.println("Didn't matched");
-        //gf.loginUser(usernametxtfield.getText(),passwordtxtfield.getText());
-        //gf.loginAdmin(usernametxtfield.getText(),passwordtxtfield.getText());
+            gf.openStageFunc("menuFXML.fxml", signInBtn);
+            System.out.println("User login");
+        }   
+        String sql2 = "select * from login where username = ? and password = ? and type = ? ";
+        pstAdmin = connection.prepareStatement(sql2);
+        pstAdmin.setString(1,usernametxtfield.getText());
+        pstAdmin.setString(2,passwordtxtfield.getText());
+        pstAdmin.setString(3,typeAdmin);
+        System.out.println("Successfull Login");
+        rsAdmin = pstAdmin.executeQuery();
+        if(rsAdmin.next()){
+            gf.openStageFunc("adminPanelFXML.fxml", signInBtn);
+            System.out.println("Admin login");
+        }
+                
     }
     
     

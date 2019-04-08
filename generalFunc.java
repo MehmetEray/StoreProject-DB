@@ -34,71 +34,10 @@ public class generalFunc {
     public void openStageFunc(String file,Button button) throws IOException{
         Stage stage=new Stage();
         Parent root = FXMLLoader.load(getClass().getResource(file));
-        stage.setScene(new Scene(root,700,470));
+        stage.setScene(new Scene(root,700,600));
         stage.initStyle(StageStyle.TRANSPARENT);
         stage.show();
         button.getScene().getWindow().hide();
     }
-   public boolean loginUser(String userName,String Password) throws SQLException{
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
-        
-        PreparedStatement preparedStatement;
-        ResultSet rs;
-        String query = "select * from login where username = ? and password = ? type = ?";
-        String query2 = "select * from login where username = ? and password = ? type = ?";
-        boolean check = false;
-        try {
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1,userName);
-            System.out.println("1");
-            preparedStatement.setString(2,Password);
-            System.out.println("2");
-            preparedStatement.setString(3,type1);
-            System.out.println("3");
-            rs = preparedStatement.executeQuery();
-            System.out.println("4");
-            if (rs.next()) {
-                System.out.println("True");
-                return check = true;
-
-            } else {
-                System.out.println("False a");
-                return check = false;
-            }
-        } catch (Exception e) {
-            System.out.println("False b");
-            return check = false;
-            }
-        
-        
-    }
-   public boolean loginAdmin(String userName,String Password) throws SQLException{
-        connection = DriverManager.getConnection(conStr,"sa","123456789");
-        PreparedStatement preparedStatement;
-        ResultSet rs;
-        String query = "select * from login where username = ? and password = ? type = ?";
-        boolean check = false;
-        try {
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1,userName);
-            System.out.println("1");
-            preparedStatement.setString(2,Password);
-            System.out.println("2");
-            preparedStatement.setString(3,type2);
-            System.out.println("3");
-            rs = preparedStatement.executeQuery();
-            System.out.println("4");
-            if (rs.next()) {
-                System.out.println("True");
-                return check = true;
-
-            } else {
-                System.out.println("False a");
-                return check = false;
-            }
-        } catch (Exception e) {
-            System.out.println("False b");
-            return check = false;
-            }
-    }
+   
 }
