@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication2.AllProductsHeadPFXMLController">
+   <children>
+      <TableView fx:id="HeadpProductTableView" layoutX="31.0" layoutY="25.0" prefHeight="221.0" prefWidth="539.0">
+        <columns>
+          <TableColumn fx:id="colHeadpProductAdmin" prefWidth="388.0" text="Products" />
+          <TableColumn fx:id="colHeadpProductPrice" prefWidth="146.0" text="price" />
+        </columns>
+      </TableView>
+      <Button fx:id="headpProductShowBtn" layoutX="31.0" layoutY="270.0" mnemonicParsing="false" onAction="#showHeadpProducts" prefHeight="31.0" prefWidth="151.0" text="Show Headphoes" />
+      <Button fx:id="backHeadpProductButton" layoutX="31.0" layoutY="312.0" mnemonicParsing="false" onAction="#backHeadpProduct" prefHeight="31.0" prefWidth="80.0" text="Back" />
+      <Button fx:id="exitHeadpProductButton" layoutX="482.0" layoutY="312.0" mnemonicParsing="false" onAction="#exitHeadpProduct" prefHeight="31.0" prefWidth="80.0" text="Exit" />
+   </children>
+</AnchorPane>

@@ -102,8 +102,8 @@ public class AdminPanelFXMLController implements Initializable {
         gf.openStageFunc("loginFXML.fxml", adminBackBtn);
     }
     @FXML
-    void adminProductHead(ActionEvent event) {
-        
+    void adminProductHead(ActionEvent event) throws IOException {
+        gf.openStageFunc("allProductsHeadPFXML.fxml", adminProductsBtn1);
     }
 
     @FXML
@@ -112,8 +112,8 @@ public class AdminPanelFXMLController implements Initializable {
     }
 
     @FXML
-    void adminProductPhone(ActionEvent event) {
-
+    void adminProductPhone(ActionEvent event) throws IOException {
+        gf.openStageFunc("allProductsPhoneFXML.fxml", adminProductsBtn3);
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) { }    

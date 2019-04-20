@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #20120F;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="javafxapplication2.AllProductsPhoneFXMLController">
+   <children>
+      <TableView fx:id="phoneProducttableview" layoutX="33.0" layoutY="29.0" prefHeight="250.0" prefWidth="537.0">
+        <columns>
+          <TableColumn fx:id="colphoneProdctsAdmi" prefWidth="396.0" text="Products" />
+          <TableColumn fx:id="colPhoneProductPrice" prefWidth="137.0" text="price" />
+        </columns>
+      </TableView>
+      <Button fx:id="backPhoneProductsButton" layoutX="33.0" layoutY="326.0" mnemonicParsing="false" onAction="#backPhoneProduct" prefHeight="31.0" prefWidth="65.0" text="Back" />
+      <Button fx:id="showPhoneProdBtn" layoutX="33.0" layoutY="288.0" mnemonicParsing="false" onAction="#showProductPhones" prefHeight="31.0" prefWidth="126.0" text="Show Phones" />
+      <Button fx:id="exitProductPhoneButton" layoutX="484.0" layoutY="326.0" mnemonicParsing="false" onAction="#exitPhoneProducts" prefHeight="31.0" prefWidth="65.0" text="Exit" />
+   </children>
+</AnchorPane>
