@@ -55,10 +55,9 @@ public class ComFunc2FXMLController implements Initializable {
     @FXML private TableColumn<?, ?> colCompPrice;
     @FXML private Button adminExitBtn;
     @FXML private Button adminBackBtn;
-    @FXML
-    private TextField adminPricetf;
-     @FXML
-    private Button adminUpdateBtn;
+    @FXML private TextField adminPricetf;
+    @FXML private Button adminUpdateBtn;
+    
     static ObservableList<comp> compData = FXCollections.observableArrayList();
     generalFunc gf = new generalFunc();
     @FXML

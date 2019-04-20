@@ -31,9 +31,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="adminLogOut" layoutX="393.0" layoutY="397.0" mnemonicParsing="false" onAction="#adminLogOut" prefHeight="25.0" prefWidth="123.0" text="Log Out" />
+      <Button fx:id="adminLogOut" layoutX="462.0" layoutY="397.0" mnemonicParsing="false" onAction="#adminLogOut" prefHeight="31.0" prefWidth="104.0" text="Log Out" />
       <Button fx:id="adminExitBtn" layoutX="446.0" layoutY="30.0" mnemonicParsing="false" onAction="#adminExit" prefHeight="31.0" prefWidth="58.0" style="-fx-background-color: #e45652;" text="Exit" />
       <Button fx:id="adminBackBtn" layoutX="68.0" layoutY="397.0" mnemonicParsing="false" onAction="#adminBack" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: #e45652;" text="Back" />
-      <Button fx:id="adminProductsBtn" layoutX="218.0" layoutY="397.0" mnemonicParsing="false" onAction="#adminProduct" prefHeight="25.0" prefWidth="100.0" text="All products" />
+      <Button fx:id="adminProductsBtn" layoutX="171.0" layoutY="397.0" mnemonicParsing="false" onAction="#adminProduct" prefHeight="31.0" prefWidth="125.0" text="Show Books" />
+      <Button fx:id="adminProductsBtn1" layoutX="171.0" layoutY="437.0" mnemonicParsing="false" onAction="#adminProductHead" prefHeight="31.0" prefWidth="125.0" text="Show Headphones" />
+      <Button fx:id="adminProductsBtn2" layoutX="303.0" layoutY="397.0" mnemonicParsing="false" onAction="#adminProductComp" prefHeight="31.0" prefWidth="125.0" text="Show Computers" />
+      <Button fx:id="adminProductsBtn3" layoutX="303.0" layoutY="437.0" mnemonicParsing="false" onAction="#adminProductPhone" prefHeight="31.0" prefWidth="125.0" text="Show Phones" />
    </children>
 </AnchorPane>

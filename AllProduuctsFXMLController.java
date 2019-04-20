@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -22,7 +23,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import static javafxapplication2.ComFunc2FXMLController.compData;
+import static javafxapplication2.ComFunc2FXMLController.connection;
 import static javafxapplication2.HeadphonesFXMLController.connection;
+import static javafxapplication2.PhoneFXMLController.connection;
+import static javafxapplication2.generalFunc.connection;
 
 /**
  * FXML Controller class
@@ -33,31 +38,36 @@ public class AllProduuctsFXMLController implements Initializable {
     private static final String conStr = "jdbc:sqlserver://localhost:1433;databaseName=project;tablename=phoneTable;integratedSecurity = true";
     static Connection connection;
     static ObservableList<headphone> headphoneData = FXCollections.observableArrayList();
-    @FXML
-    private TableColumn<?, ?> colProductsPrices;
-
-    @FXML
-    private Button productsBackBtn;
-
-    @FXML
-    private TableView<?> productsTableView;
-
-    @FXML
-    private Button productsExitBtn;
-
-    @FXML
-    private TableColumn<?, ?> colProductsNames;
-    @FXML
-    private Button showProductsBtn;
+    @FXML private TableColumn<?, ?> colProductsPrices;
+    @FXML private Button productsBackBtn;
+    @FXML private TableView<product> productsTableView;
+    @FXML private Button productsExitBtn;
+    @FXML private Button showProductsBtn;
+    @FXML private TableColumn<?, ?> colProductsNames;
+   
+    static ObservableList<product> productData = FXCollections.observableArrayList();
+    
+    PreparedStatement pst;
+    ResultSet rs;
     generalFunc gf = new generalFunc();
+    
+    
     @FXML
     void productsBack(ActionEvent event) throws IOException {
         gf.openStageFunc("adminPanelFXML.fxml", productsBackBtn);
     }
 
     @FXML
-    void showProducts(ActionEvent event) {
-        
+    void showProducts(ActionEvent event) throws SQLException {
+        connection = DriverManager.getConnection(conStr,"sa","123456789");
+        String sqlView = "select * from [project].[dbo].[book]";
+        ResultSet rs = connection.createStatement().executeQuery(sqlView);
+        while(rs.next()){
+            productData.add(new product(rs.getString("bookName"),rs.getInt("price")));
+        }
+        colProductsNames.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colProductsPrices.setCellValueFactory(new PropertyValueFactory<>("price"));
+        productsTableView.setItems(productData);
     }
     
     @FXML
@@ -69,18 +79,8 @@ public class AllProduuctsFXMLController implements Initializable {
         // TODO
     }    
     public void showProducts() throws SQLException{
-        /*connection = DriverManager.getConnection(conStr,"sa","123456789");
-        ResultSet rs = connection.createStatement().executeQuery(query);
-        while(rs.next()){
-            headphoneData.add(new headphone(rs.getString("brand"),rs.getString("model"),rs.getInt("price")));
-        }
-        colHeadphoneBrand.setCellValueFactory(new PropertyValueFactory<>("brand"));
-        colHeadphoneModel.setCellValueFactory(new PropertyValueFactory<>("model"));
-        colHeadphonePrice.setCellValueFactory(new PropertyValueFactory<>("price"));
-        headphoneTableView.setItems(headphoneData); */
-    }
-    public void usingView(){
         
     }
+    
     
 }

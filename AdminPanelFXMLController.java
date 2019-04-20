@@ -37,6 +37,13 @@ public class AdminPanelFXMLController implements Initializable {
     @FXML private Button adminInsertBookBtn;
     @FXML private Button adminLogOut;
     @FXML
+    private Button adminProductsBtn1;
+    @FXML
+    private Button adminProductsBtn2;
+    @FXML
+    private Button adminProductsBtn3;
+    
+    @FXML
     private Button adminProductsBtn;
     generalFunc gf = new generalFunc();
 @FXML
@@ -87,12 +94,26 @@ public class AdminPanelFXMLController implements Initializable {
     }
     @FXML
     void adminProduct(ActionEvent event) throws IOException {
-        gf.openStageFunc("allProductsFXML.fxml", adminProductsBtn);
+        gf.openStageFunc("allProduuctsFXML.fxml", adminProductsBtn);
     }
 
     @FXML
     void adminBack(ActionEvent event) throws IOException {
         gf.openStageFunc("loginFXML.fxml", adminBackBtn);
+    }
+    @FXML
+    void adminProductHead(ActionEvent event) {
+        
+    }
+
+    @FXML
+    void adminProductComp(ActionEvent event) throws IOException {
+        gf.openStageFunc("allProductsCompFXML.fxml", adminProductsBtn2);
+    }
+
+    @FXML
+    void adminProductPhone(ActionEvent event) {
+
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) { }    

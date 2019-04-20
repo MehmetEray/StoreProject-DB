@@ -40,7 +40,6 @@ public class LoginFXMLController implements Initializable {
     @FXML private PasswordField passwordInsert;
     @FXML private TextField usernameInsert; 
     @FXML private AnchorPane menuPane;
-    @FXML private Hyperlink forgotPassword;
     @FXML private Button signUpBtn;
     @FXML private PasswordField passwordtxtfield;
     @FXML private Button exitLoginBtn;
@@ -84,11 +83,6 @@ public class LoginFXMLController implements Initializable {
     }
     
     
-    
-
-       
-    @FXML
-    void forgot(ActionEvent event) {}
     @FXML
     void exitLogin(ActionEvent event) {
             Platform.exit();
@@ -103,6 +97,8 @@ public class LoginFXMLController implements Initializable {
         pst.setString(2,passwordInsert.getText());
         pst.setString(3,"user");
         JOptionPane.showMessageDialog(null, "You have registered!");
+        usernameInsert.setText("");
+        passwordInsert.setText("");
     }
     @Override
     public void initialize(URL url, ResourceBundle rb) { }    

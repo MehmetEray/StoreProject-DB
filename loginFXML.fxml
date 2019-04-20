@@ -17,7 +17,6 @@
                <font>
                   <Font size="18.0" />
                </font></Label>
-            <Hyperlink fx:id="forgotPassword" layoutX="100.0" layoutY="360.0" onAction="#forgot" text="Forgot Password?" textFill="#ebdfdf" />
             <Button fx:id="exitLoginBtn" layoutX="238.0" layoutY="447.0" mnemonicParsing="false" onAction="#exitLogin" prefHeight="8.0" prefWidth="51.0" style="-fx-background-color: #e45652;" text="exit" />
             <HBox layoutX="56.0" layoutY="197.0" prefHeight="27.0" prefWidth="190.0" style="-fx-background-color: #9C2827; -fx-border-color: #a2a2a2; -fx-border-width: 0px 0px 2px 0px;">
                <children>

@@ -52,8 +52,8 @@ public class BookFunc2FXMLController implements Initializable {
     @FXML private Button adminExitBtn;
     @FXML private Button adminBackBtn;
     @FXML private Button adminUpdateBookBtn;
-    @FXML
-    private TextField adminPricetf;
+    @FXML private TextField adminPricetf;
+   
     
     static ObservableList<book> bookData = FXCollections.observableArrayList();
     generalFunc gf = new generalFunc();
@@ -64,7 +64,7 @@ public class BookFunc2FXMLController implements Initializable {
         PreparedStatement pst = connection.prepareStatement(query);
         pst.setString(1, deleteBooktxtfield.getText());
         pst.executeUpdate();
-        System.out.println("Silindi");
+        System.out.println("deleted");
         JOptionPane.showMessageDialog(null,"Success");
         deleteBooktxtfield.clear();
         
@@ -90,7 +90,7 @@ public class BookFunc2FXMLController implements Initializable {
         adminDeleteBookTable.setItems(bookData);
         System.out.println("Kitaplar gösterildi");
     }
-     @FXML
+    @FXML
     void adminBack(ActionEvent event) throws IOException {
         gf.openStageFunc("adminPanelFXML.fxml", adminBackBtn);
     }
@@ -99,7 +99,7 @@ public class BookFunc2FXMLController implements Initializable {
     void adminExit(ActionEvent event) {
         Platform.exit();
     }
-     @FXML
+    @FXML
     void adminUpdateBook(ActionEvent event) throws SQLException {
         connection = DriverManager.getConnection(conStr,"sa","123456789");
         String query = "update bookTable set price = ? where bookName = ?";

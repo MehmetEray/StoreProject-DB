@@ -22,5 +22,6 @@
       <Button fx:id="adminExitBtn" layoutX="484.0" layoutY="367.0" mnemonicParsing="false" onAction="#adminExit" prefHeight="31.0" prefWidth="63.0" style="-fx-background-color: #e45652;" text="Exit" />
       <TextField fx:id="adminPricetf" layoutX="230.0" layoutY="321.0" prefHeight="25.0" prefWidth="63.0" />
       <Button fx:id="adminUpdateBtn" layoutX="364.0" layoutY="367.0" mnemonicParsing="false" onAction="#adminUpdateHeadp" prefHeight="25.0" prefWidth="83.0" text="Update" />
+      <Label layoutX="78.0" layoutY="326.0" text="Price" textFill="#fffafa" />
    </children>
 </AnchorPane>

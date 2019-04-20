@@ -32,11 +32,18 @@ public class MenuFXMLController implements Initializable {
     @FXML private Button booksBtn;
     @FXML private Button phonesBtn;
     @FXML private Button phoneexit;
+    @FXML private Button menuBackBtn;
+   
     generalFunc gf = new generalFunc();
     @FXML
     void headShow(ActionEvent event) throws IOException {
         gf.openStageFunc("headphonesFXML.fxml", headBtn);
         System.out.println("Kulaklıklara giriş yapıldı");
+    }
+
+    @FXML
+    void menuBack(ActionEvent event) throws IOException {
+        gf.openStageFunc("loginFXML.fxml", menuBackBtn);
     }
 
     @FXML
